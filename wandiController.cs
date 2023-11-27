@@ -22,6 +22,6 @@ public class wandiController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        velocityJ2 = sliderVelocityJ2.value;
     }
 }
