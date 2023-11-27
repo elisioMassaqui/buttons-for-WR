@@ -10,7 +10,8 @@ public class wandiController : MonoBehaviour
     public Slider sliderVelocityJ2;
     public float limiteSuperiorJ2;
     public float limiteInferiorJ2;
-    public float grauDaRotaçãoJ2 = 0f;
+    public float novaRotacao;
+    public float grauDaRotaçãoJ2;
 
 
     // Start is called before the first frame update
@@ -23,5 +24,7 @@ public class wandiController : MonoBehaviour
     void Update()
     {
         velocityJ2 = sliderVelocityJ2.value;
+
+        novaRotacao = J2.transform.rotation.eulerAngles.y + velocityJ2 * Time.deltaTime;
     }
 }
