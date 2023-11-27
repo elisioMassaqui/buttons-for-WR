@@ -31,7 +31,7 @@ public class wandiController : MonoBehaviour
 
         if (novaRotacao >= limiteInferiorJ2 && novaRotacao <= limiteSuperiorJ2)
         {
-
+            J2.transform.rotation = Quaternion.Euler(0,0,novaRotacao);
         }
     }
 }
