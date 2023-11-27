@@ -10,7 +10,6 @@ public class wandiController : MonoBehaviour
     public Slider sliderVelocityJ2;
     public float limiteSuperiorJ2;
     public float limiteInferiorJ2;
-    public float novaRotacao;
     public float grauDaRotacoJ2;
 
 
@@ -37,25 +36,25 @@ public class wandiController : MonoBehaviour
 
     public void moverJ2Positivo()
     {
-        novaRotacao = J2.transform.rotation.eulerAngles.z + velocityJ2 * Time.deltaTime;
+        grauDaRotacoJ2 = J2.transform.rotation.eulerAngles.z + velocityJ2 * Time.deltaTime;
 
-        novaRotacao = Mathf.Clamp(novaRotacao, limiteInferiorJ2, limiteSuperiorJ2);
+        grauDaRotacoJ2 = Mathf.Clamp(grauDaRotacoJ2, limiteInferiorJ2, limiteSuperiorJ2);
 
-        if (novaRotacao >= limiteInferiorJ2 && novaRotacao <= limiteSuperiorJ2)
+        if (grauDaRotacoJ2 >= limiteInferiorJ2 && grauDaRotacoJ2 <= limiteSuperiorJ2)
         {
-            J2.transform.rotation = Quaternion.Euler(0, 0, novaRotacao);
+            J2.transform.rotation = Quaternion.Euler(0, 0, grauDaRotacoJ2);
         }
     }
 
     public void moverJ2Negativo()
     {
-        novaRotacao = J2.transform.rotation.eulerAngles.z - velocityJ2 * Time.deltaTime;
+        grauDaRotacoJ2 = J2.transform.rotation.eulerAngles.z - velocityJ2 * Time.deltaTime;
 
-        novaRotacao = Mathf.Clamp(novaRotacao, limiteInferiorJ2, limiteSuperiorJ2);
+        grauDaRotacoJ2 = Mathf.Clamp(grauDaRotacoJ2, limiteInferiorJ2, limiteSuperiorJ2);
 
-        if (novaRotacao >= limiteInferiorJ2 && novaRotacao <= limiteSuperiorJ2)
+        if (grauDaRotacoJ2 >= limiteInferiorJ2 && grauDaRotacoJ2 <= limiteSuperiorJ2)
         {
-            J2.transform.rotation = Quaternion.Euler(0, 0, novaRotacao);
+            J2.transform.rotation = Quaternion.Euler(0, 0, grauDaRotacoJ2);
         }
     }
 }
