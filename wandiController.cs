@@ -25,10 +25,10 @@ public class wandiController : MonoBehaviour
     {
         velocityJ2 = sliderVelocityJ2.value;
 
-        novaRotacao = J2.transform.rotation.eulerAngles.z + velocityJ2 * Time.deltaTime;
-
         if (Input.GetKey(KeyCode.Alpha1))
         {
+            novaRotacao = J2.transform.rotation.eulerAngles.z + velocityJ2 * Time.deltaTime;
+
             novaRotacao = Mathf.Clamp(novaRotacao, limiteInferiorJ2, limiteSuperiorJ2);
 
             if (novaRotacao >= limiteInferiorJ2 && novaRotacao <= limiteSuperiorJ2)
