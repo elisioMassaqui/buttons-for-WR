@@ -26,5 +26,7 @@ public class wandiController : MonoBehaviour
         velocityJ2 = sliderVelocityJ2.value;
 
         novaRotacao = J2.transform.rotation.eulerAngles.y + velocityJ2 * Time.deltaTime;
+
+        novaRotacao = Mathf.Clamp(novaRotacao, limiteInferiorJ2, limiteSuperiorJ2);
     }
 }
