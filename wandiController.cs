@@ -25,15 +25,31 @@ public class wandiController : MonoBehaviour
     {
         velocityJ2 = sliderVelocityJ2.value;
 
-        if (Input.GetKey(KeyCode.Alpha1))
+        if (Input.GetKey(KeyCode.Alpha2) && Input.GetKey(KeyCode.RightArrow))
         {
             moverJ2Positivo();
+        }
+        if(Input.GetKey(KeyCode.Alpha2) && Input.GetKey(KeyCode.LeftArrow))
+        {
+            moverJ2Negativo();
         }
     }
 
     public void moverJ2Positivo()
     {
         novaRotacao = J2.transform.rotation.eulerAngles.z + velocityJ2 * Time.deltaTime;
+
+        novaRotacao = Mathf.Clamp(novaRotacao, limiteInferiorJ2, limiteSuperiorJ2);
+
+        if (novaRotacao >= limiteInferiorJ2 && novaRotacao <= limiteSuperiorJ2)
+        {
+            J2.transform.rotation = Quaternion.Euler(0, 0, novaRotacao);
+        }
+    }
+
+    public void moverJ2Negativo()
+    {
+        novaRotacao = J2.transform.rotation.eulerAngles.z - velocityJ2 * Time.deltaTime;
 
         novaRotacao = Mathf.Clamp(novaRotacao, limiteInferiorJ2, limiteSuperiorJ2);
 
