@@ -5,6 +5,7 @@ using UnityEngine;
 public class wandiController : MonoBehaviour
 {
     public GameObject J2;
+    public float velocityJ2;
 
 
     // Start is called before the first frame update
