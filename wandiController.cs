@@ -28,5 +28,10 @@ public class wandiController : MonoBehaviour
         novaRotacao = J2.transform.rotation.eulerAngles.y + velocityJ2 * Time.deltaTime;
 
         novaRotacao = Mathf.Clamp(novaRotacao, limiteInferiorJ2, limiteSuperiorJ2);
+
+        if (novaRotacao >= limiteInferiorJ2 && novaRotacao <= limiteSuperiorJ2)
+        {
+
+        }
     }
 }
