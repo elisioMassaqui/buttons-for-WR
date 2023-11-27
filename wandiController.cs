@@ -11,7 +11,7 @@ public class wandiController : MonoBehaviour
     public float limiteSuperiorJ2;
     public float limiteInferiorJ2;
     public float novaRotacao;
-    public float grauDaRotaçãoJ2;
+    public float grauDaRotacoJ2;
 
 
     // Start is called before the first frame update
@@ -25,13 +25,16 @@ public class wandiController : MonoBehaviour
     {
         velocityJ2 = sliderVelocityJ2.value;
 
-        novaRotacao = J2.transform.rotation.eulerAngles.y + velocityJ2 * Time.deltaTime;
+        novaRotacao = J2.transform.rotation.eulerAngles.z + velocityJ2 * Time.deltaTime;
 
-        novaRotacao = Mathf.Clamp(novaRotacao, limiteInferiorJ2, limiteSuperiorJ2);
-
-        if (novaRotacao >= limiteInferiorJ2 && novaRotacao <= limiteSuperiorJ2)
+        if (Input.GetKey(KeyCode.Alpha1))
         {
-            J2.transform.rotation = Quaternion.Euler(0,0,novaRotacao);
+            novaRotacao = Mathf.Clamp(novaRotacao, limiteInferiorJ2, limiteSuperiorJ2);
+
+            if (novaRotacao >= limiteInferiorJ2 && novaRotacao <= limiteSuperiorJ2)
+            {
+                J2.transform.rotation = Quaternion.Euler(0, 0, novaRotacao);
+            }
         }
     }
 }
