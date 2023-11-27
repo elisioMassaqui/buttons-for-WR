@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class wandiController : MonoBehaviour
 {
+    //Vida Da Nossa Junta2
     public GameObject J2;
     public float velocityJ2 = 0f;
     public Slider sliderVelocityJ2;
