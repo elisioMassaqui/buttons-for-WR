@@ -45,19 +45,19 @@ public class wandiController : MonoBehaviour
         {
             moverJ2Positivo();
         }
-        if(Input.GetKey(KeyCode.Alpha2) && Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.Alpha2) && Input.GetKey(KeyCode.LeftArrow))
         {
             moverJ2Negativo();
         }
 
-        if(btnpress == true)
+        if (btnpress == true)
         {
 
             moverJ2Positivo();
-            
-           Debug.Log("btnpress");
 
-    }
+            Debug.Log("btnpress");
+
+        }
     }
 
     public void moverJ2Positivo()
