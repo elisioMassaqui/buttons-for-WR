@@ -25,9 +25,9 @@ public class wandiController : MonoBehaviour
     public float grauDaRotacoJ2;
 
 
-    public bool btnpress = false;
+    public Button botaoPositivoJ2;
 
-    public Button btnpress2;
+    public bool boolPositivoJ2 = false;
 
 
     // Start is called before the first frame update
@@ -50,7 +50,7 @@ public class wandiController : MonoBehaviour
             moverJ2Negativo();
         }
 
-        if (btnpress == true)
+        if (boolPositivoJ2 == true)
         {
 
             moverJ2Positivo();
