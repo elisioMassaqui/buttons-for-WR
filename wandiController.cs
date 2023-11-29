@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 public class wandiController : MonoBehaviour
 {
 
-    //Vida Da Nossa JuntaJ1..
+    //Vida Da Nossa JuntaJ1
     public GameObject J1;
     public float velocityJ1;
     public Slider sliderVelocityJ1;
@@ -16,7 +16,7 @@ public class wandiController : MonoBehaviour
     public float limiteDireitoJ1;
     public float grauDaRotacaoJ1;
 
-    //Vida Da Nossa Junta2.
+    //Vida Da Nossa Junta2
     public GameObject J2;
     public float velocityJ2 = 0f;
     public Slider sliderVelocityJ2;
