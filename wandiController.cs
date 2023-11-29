@@ -2,9 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using Unity.VisualScripting;
 
 public class wandiController : MonoBehaviour
 {
+
+    //Vida Da Nossa JuntaJ1
+    public GameObject J1;
+    public float velocityJ1;
+    public Slider sliderVelocityJ1;
+    public float limiteEsquerdoJ1;
+    public float limiteDireitoJ1;
+    public float grauDaRotacaoJ1;
+
     //Vida Da Nossa Junta2
     public GameObject J2;
     public float velocityJ2 = 0f;
@@ -12,6 +23,11 @@ public class wandiController : MonoBehaviour
     public float limiteSuperiorJ2;
     public float limiteInferiorJ2;
     public float grauDaRotacoJ2;
+
+
+    public bool btnpress = false;
+
+    public Button btnpress2;
 
 
     // Start is called before the first frame update
@@ -33,6 +49,15 @@ public class wandiController : MonoBehaviour
         {
             moverJ2Negativo();
         }
+
+        if(btnpress == true)
+        {
+
+            moverJ2Positivo();
+            
+           Debug.Log("btnpress");
+
+    }
     }
 
     public void moverJ2Positivo()
