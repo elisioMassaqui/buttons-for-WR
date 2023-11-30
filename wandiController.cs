@@ -44,25 +44,51 @@ public class wandiController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Alpha2) && Input.GetKey(KeyCode.RightArrow))
         {
-            moverJ2Positivo();
+            moverJ2PositivoJ2();
         }
         if (Input.GetKey(KeyCode.Alpha2) && Input.GetKey(KeyCode.LeftArrow))
         {
-            moverJ2Negativo();
+            moverJ2NegativoJ2();
         }
 
         if (boolPositivoJ2 == true)
         {
 
-            moverJ2Positivo();
+            moverJ2PositivoJ2();
 
             Debug.Log("btnpress");
 
         }
 
+        if(Input.GetKey(KeyCode.A))
+        {
+           
+        }
+        if ((Input.GetKey(KeyCode.D)))
+        {
+
+        }
+
     }
 
-    public void moverJ2Positivo()
+    public void moverPositivoJ1()
+    {
+        grauDaRotacaoJ1 = J1.transform.eulerAngles.y + velocityJ1 * Time.deltaTime;
+
+        grauDaRotacaoJ1 = Mathf.Clamp(grauDaRotacaoJ1, limiteDireitoJ1, limiteEsquerdoJ1);
+
+        if(grauDaRotacaoJ1 >= limiteDireitoJ1 && grauDaRotacaoJ1 <= limiteEsquerdoJ1)
+        {
+            J1.transform.rotation = Quaternion.Euler(0, grauDaRotacaoJ1, 0);
+        }
+    }
+
+    public void moverNegativoJ1()
+    {
+
+    }
+
+    public void moverJ2PositivoJ2()
     {
         grauDaRotacoJ2 = J2.transform.rotation.eulerAngles.z + velocityJ2 * Time.deltaTime;
 
@@ -74,7 +100,7 @@ public class wandiController : MonoBehaviour
         }
     }
 
-    public void moverJ2Negativo()
+    public void moverJ2NegativoJ2()
     {
         grauDaRotacoJ2 = J2.transform.rotation.eulerAngles.z - velocityJ2 * Time.deltaTime;
 
