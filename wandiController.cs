@@ -41,6 +41,25 @@ public class wandiController : MonoBehaviour
         velocityJ2 = sliderVelocityJ2.value;
         velocityJ1 = sliderVelocityJ2.value;
 
+        if(J1POSITIVO == true)
+        {
+            moverPositivoJ1();
+        }
+        if(J1NEGATIVO == true)
+        {
+            moverNegativoJ1();
+        }
+
+        if(J2POSITIVO == true)
+        {
+            moverJ2PositivoJ2();
+        }
+
+        if(J2NEGATIVO == true)
+        {
+            moverJ2NegativoJ2();
+        }
+
 
         if (Input.GetKey(KeyCode.A))
         {
