@@ -77,7 +77,6 @@ public class wandiController : MonoBehaviour
 
         grauDaRotacaoJ1 = Mathf.Clamp(grauDaRotacaoJ1, limiteDireitoJ1, limiteEsquerdoJ1);
 
-        if(grauDaRotacaoJ1 >= limiteDireitoJ1 && grauDaRotacaoJ1 <= limiteEsquerdoJ1)
         {
             J1.transform.rotation = Quaternion.Euler(0, grauDaRotacaoJ1, 0);
         }
