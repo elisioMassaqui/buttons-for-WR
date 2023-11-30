@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 public class wandiController : MonoBehaviour
 {
 
-    //Vida Da Nossa JuntaJ1 e verificações booleanas
+    //Vida Da Nossa JuntaJ1 e verificações booleanas.
     public GameObject J1;
     public float velocityJ1 = 0f;
     public Slider sliderVelocityJ1;
@@ -18,7 +18,7 @@ public class wandiController : MonoBehaviour
     public bool J1POSITIVO = false;
     public bool J1NEGATIVO = false;
 
-    //Vida Da Nossa Junta2 e verificações booleanas
+    //Vida Da Nossa Junta2 e verificações booleanas.
     public GameObject J2;
     public float velocityJ2 = 0f;
     public Slider sliderVelocityJ2;
