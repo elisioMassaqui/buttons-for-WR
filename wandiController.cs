@@ -33,7 +33,7 @@ public class wandiController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -41,6 +41,7 @@ public class wandiController : MonoBehaviour
     {
         velocityJ2 = sliderVelocityJ2.value;
         velocityJ1 = sliderVelocityJ2.value;
+
 
         if (Input.GetKey(KeyCode.Alpha2) && Input.GetKey(KeyCode.RightArrow))
         {
@@ -73,26 +74,26 @@ public class wandiController : MonoBehaviour
 
     public void moverPositivoJ1()
     {
-        grauDaRotacaoJ1 = J1.transform.rotation.eulerAngles.y + velocityJ1 * Time.deltaTime;
+        grauDaRotacaoJ1 = J1.transform.localRotation.eulerAngles.y + velocityJ1 * Time.deltaTime;
 
         grauDaRotacaoJ1 = Mathf.Clamp(grauDaRotacaoJ1, limiteEsquerdoJ1, limiteDireitoJ1);
 
         if (grauDaRotacaoJ1 >= limiteEsquerdoJ1 && grauDaRotacaoJ1 <= limiteDireitoJ1)
         {
-            J1.transform.rotation = Quaternion.Euler(0, grauDaRotacaoJ1, 0);
+            J1.transform.localRotation = Quaternion.Euler(0, grauDaRotacaoJ1, 0);
         }
 
     }
 
     public void moverNegativoJ1()
     {
-        grauDaRotacaoJ1 = J1.transform.rotation.eulerAngles.y - velocityJ1 * Time.deltaTime;
+        grauDaRotacaoJ1 = J1.transform.localRotation.eulerAngles.y - velocityJ1 * Time.deltaTime;
 
         grauDaRotacaoJ1 = Mathf.Clamp(grauDaRotacaoJ1, limiteEsquerdoJ1, limiteDireitoJ1);
 
         if (grauDaRotacaoJ1 >= limiteEsquerdoJ1 && grauDaRotacaoJ1 <= limiteDireitoJ1)
         {
-            J1.transform.rotation = Quaternion.Euler(0, grauDaRotacaoJ1, 0);
+            J1.transform.localRotation = Quaternion.Euler(0, grauDaRotacaoJ1, 0);
         }
     }
 
@@ -100,25 +101,25 @@ public class wandiController : MonoBehaviour
 
     public void moverJ2PositivoJ2()
     {
-        grauDaRotacoJ2 = J2.transform.rotation.eulerAngles.z + velocityJ2 * Time.deltaTime;
+        grauDaRotacoJ2 = J2.transform.localRotation.eulerAngles.z + velocityJ2 * Time.deltaTime;
 
         grauDaRotacoJ2 = Mathf.Clamp(grauDaRotacoJ2, limiteInferiorJ2, limiteSuperiorJ2);
 
         if (grauDaRotacoJ2 >= limiteInferiorJ2 && grauDaRotacoJ2 <= limiteSuperiorJ2)
         {
-            J2.transform.rotation = Quaternion.Euler(0, 0, grauDaRotacoJ2);
+            J2.transform.localRotation = Quaternion.Euler(0, 0, grauDaRotacoJ2);
         }
     }
 
     public void moverJ2NegativoJ2()
     {
-        grauDaRotacoJ2 = J2.transform.rotation.eulerAngles.z - velocityJ2 * Time.deltaTime;
+        grauDaRotacoJ2 = J2.transform.localRotation.eulerAngles.z - velocityJ2 * Time.deltaTime;
 
         grauDaRotacoJ2 = Mathf.Clamp(grauDaRotacoJ2, limiteInferiorJ2, limiteSuperiorJ2);
 
         if (grauDaRotacoJ2 >= limiteInferiorJ2 && grauDaRotacoJ2 <= limiteSuperiorJ2)
         {
-            J2.transform.rotation = Quaternion.Euler(0, 0, grauDaRotacoJ2);
+            J2.transform.localRotation = Quaternion.Euler(0, 0, grauDaRotacoJ2);
         }
     }
 }
