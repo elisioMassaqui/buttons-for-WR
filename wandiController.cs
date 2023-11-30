@@ -64,7 +64,7 @@ public class wandiController : MonoBehaviour
         {
             moverPositivoJ1();
         }
-        if ((Input.GetKey(KeyCode.D)))
+        if (Input.GetKey(KeyCode.D))
         {
             moverNegativoJ1();
         }
@@ -73,19 +73,30 @@ public class wandiController : MonoBehaviour
 
     public void moverPositivoJ1()
     {
-        grauDaRotacaoJ1 = J1.transform.eulerAngles.y + velocityJ1 * Time.deltaTime;
+        grauDaRotacaoJ1 = J1.transform.rotation.eulerAngles.y + velocityJ1 * Time.deltaTime;
 
-        grauDaRotacaoJ1 = Mathf.Clamp(grauDaRotacaoJ1, limiteDireitoJ1, limiteEsquerdoJ1);
+        grauDaRotacaoJ1 = Mathf.Clamp(grauDaRotacaoJ1, limiteEsquerdoJ1, limiteDireitoJ1);
 
+        if (grauDaRotacaoJ1 >= limiteEsquerdoJ1 && grauDaRotacaoJ1 <= limiteDireitoJ1)
+        {
+            J1.transform.rotation = Quaternion.Euler(0, grauDaRotacaoJ1, 0);
+        }
+
+    }
+
+    public void moverNegativoJ1()
+    {
+        grauDaRotacaoJ1 = J1.transform.rotation.eulerAngles.y - velocityJ1 * Time.deltaTime;
+
+        grauDaRotacaoJ1 = Mathf.Clamp(grauDaRotacaoJ1, limiteEsquerdoJ1, limiteDireitoJ1);
+
+        if (grauDaRotacaoJ1 >= limiteEsquerdoJ1 && grauDaRotacaoJ1 <= limiteDireitoJ1)
         {
             J1.transform.rotation = Quaternion.Euler(0, grauDaRotacaoJ1, 0);
         }
     }
 
-    public void moverNegativoJ1()
-    {
 
-    }
 
     public void moverJ2PositivoJ2()
     {
