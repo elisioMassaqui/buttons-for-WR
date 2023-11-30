@@ -103,7 +103,7 @@ public class wandiController : MonoBehaviour
             moverJ2NegativoJ2();
         }
 
-        // Controle do Teclado Junta 3
+        // Controle do Teclado Junta 3.
         if (Input.GetKey(KeyCode.Alpha3) && Input.GetKey(KeyCode.RightArrow))
         {
             moverJ3Positivo();
