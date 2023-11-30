@@ -35,6 +35,8 @@ public class wandiController : MonoBehaviour
     public float limiteSuperiorJ3;
     public float limiteInferiorJ3;
     public float grauDaRotacoJ3;
+    public bool J3POSITIVO = false;
+    public bool J3NEGATIVO = false;
 
 
     // Start is called before the first frame update
@@ -150,6 +152,18 @@ public class wandiController : MonoBehaviour
         grauDaRotacoJ3 = Mathf.Clamp(grauDaRotacoJ3, limiteInferiorJ3, limiteSuperiorJ3);
 
         if(grauDaRotacoJ3 >= limiteInferiorJ3 && grauDaRotacoJ3 <= limiteSuperiorJ3)
+        {
+            J3.transform.localRotation = Quaternion.Euler(0, 0, grauDaRotacoJ3);
+        }
+    }
+
+    public void moverJ3Negativo()
+    {
+        grauDaRotacoJ3 = J3.transform.localRotation.eulerAngles.z - velocityJ3 * Time.deltaTime;
+
+        grauDaRotacoJ3 = Mathf.Clamp(grauDaRotacoJ3, limiteInferiorJ3, limiteSuperiorJ3);
+
+        if (grauDaRotacoJ3 >= limiteInferiorJ3 && grauDaRotacoJ3 <= limiteSuperiorJ3)
         {
             J3.transform.localRotation = Quaternion.Euler(0, 0, grauDaRotacoJ3);
         }
