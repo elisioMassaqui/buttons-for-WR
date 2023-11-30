@@ -62,11 +62,11 @@ public class wandiController : MonoBehaviour
 
         if(Input.GetKey(KeyCode.A))
         {
-           
+            moverPositivoJ1();
         }
         if ((Input.GetKey(KeyCode.D)))
         {
-
+            moverNegativoJ1();
         }
 
     }
