@@ -15,6 +15,8 @@ public class wandiController : MonoBehaviour
     public float limiteEsquerdoJ1;
     public float limiteDireitoJ1;
     public float grauDaRotacaoJ1;
+    public bool J1POSITIVO = false;
+    public bool J1NEGATIVO = false;
 
     //Vida Da Nossa Junta2
     public GameObject J2;
@@ -23,11 +25,8 @@ public class wandiController : MonoBehaviour
     public float limiteSuperiorJ2;
     public float limiteInferiorJ2;
     public float grauDaRotacoJ2;
-
-
-    public Button botaoPositivoJ2;
-
-    public bool boolPositivoJ2 = false;
+    public bool J2POSITIVO = false;
+    public bool J2NEGATIVO = false;
 
 
     // Start is called before the first frame update
@@ -43,6 +42,15 @@ public class wandiController : MonoBehaviour
         velocityJ1 = sliderVelocityJ2.value;
 
 
+        if (Input.GetKey(KeyCode.A))
+        {
+            moverPositivoJ1();
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            moverNegativoJ1();
+        }
+
         if (Input.GetKey(KeyCode.Alpha2) && Input.GetKey(KeyCode.RightArrow))
         {
             moverJ2PositivoJ2();
@@ -52,23 +60,6 @@ public class wandiController : MonoBehaviour
             moverJ2NegativoJ2();
         }
 
-        if (boolPositivoJ2 == true)
-        {
-
-            moverJ2PositivoJ2();
-
-            Debug.Log("btnpress");
-
-        }
-
-        if(Input.GetKey(KeyCode.A))
-        {
-            moverPositivoJ1();
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            moverNegativoJ1();
-        }
 
     }
 
