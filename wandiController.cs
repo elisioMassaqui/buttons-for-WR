@@ -62,6 +62,7 @@ public class wandiController : MonoBehaviour
             moverNegativoJ1();
         }
 
+
         if(J2POSITIVO == true)
         {
             moverJ2PositivoJ2();
@@ -73,6 +74,16 @@ public class wandiController : MonoBehaviour
         }
 
 
+        if (J3POSITIVO == true)
+        {
+            moverJ3Positivo();
+        }
+        if(J3NEGATIVO == true)
+        {
+            moverJ3Negativo();
+        }
+
+        // Controle do Teclado Junta 1
         if (Input.GetKey(KeyCode.A))
         {
             moverPositivoJ1();
@@ -82,6 +93,7 @@ public class wandiController : MonoBehaviour
             moverNegativoJ1();
         }
 
+        // Controle do Teclado Junta 2
         if (Input.GetKey(KeyCode.Alpha2) && Input.GetKey(KeyCode.RightArrow))
         {
             moverJ2PositivoJ2();
@@ -89,6 +101,16 @@ public class wandiController : MonoBehaviour
         if (Input.GetKey(KeyCode.Alpha2) && Input.GetKey(KeyCode.LeftArrow))
         {
             moverJ2NegativoJ2();
+        }
+
+        // Controle do Teclado Junta 3
+        if (Input.GetKey(KeyCode.Alpha3) && Input.GetKey(KeyCode.RightArrow))
+        {
+            moverJ3Positivo();
+        }
+        if(Input.GetKey(KeyCode.Alpha3) && Input.GetKey(KeyCode.LeftArrow))
+        {
+            moverJ3Negativo();
         }
 
 
