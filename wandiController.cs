@@ -142,4 +142,16 @@ public class wandiController : MonoBehaviour
             J2.transform.localRotation = Quaternion.Euler(0, 0, grauDaRotacoJ2);
         }
     }
+
+    public void moverJ3Positivo()
+    {
+        grauDaRotacoJ3 = J3.transform.localRotation.eulerAngles.z + velocityJ3 * Time.deltaTime;
+
+        grauDaRotacoJ3 = Mathf.Clamp(grauDaRotacoJ3, limiteInferiorJ3, limiteSuperiorJ3);
+
+        if(grauDaRotacoJ3 >= limiteInferiorJ3 && grauDaRotacoJ3 <= limiteSuperiorJ3)
+        {
+            J3.transform.localRotation = Quaternion.Euler(0, 0, grauDaRotacoJ3);
+        }
+    }
 }
