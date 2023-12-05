@@ -65,22 +65,22 @@ public class wandiController : MonoBehaviour
 
         if(J2POSITIVO == true)
         {
-            moverJ2PositivoJ2();
+            moverPositivoJ2();
         }
 
         if(J2NEGATIVO == true)
         {
-            moverJ2NegativoJ2();
+            moverNegativoJ2();
         }
 
 
         if (J3POSITIVO == true)
         {
-            moverJ3Positivo();
+            moverPositivoJ3();
         }
         if(J3NEGATIVO == true)
         {
-            moverJ3Negativo();
+            moverNegativoJ3();
         }
 
         // Controle do Teclado Junta 1
@@ -96,21 +96,21 @@ public class wandiController : MonoBehaviour
         // Controle do Teclado Junta 2
         if (Input.GetKey(KeyCode.Alpha2) && Input.GetKey(KeyCode.RightArrow))
         {
-            moverJ2PositivoJ2();
+            moverPositivoJ2();
         }
         if (Input.GetKey(KeyCode.Alpha2) && Input.GetKey(KeyCode.LeftArrow))
         {
-            moverJ2NegativoJ2();
+            moverNegativoJ2();
         }
 
         // Controle do Teclado Junta 3.
         if (Input.GetKey(KeyCode.Alpha3) && Input.GetKey(KeyCode.RightArrow))
         {
-            moverJ3Positivo();
+            moverPositivoJ3();
         }
         if(Input.GetKey(KeyCode.Alpha3) && Input.GetKey(KeyCode.LeftArrow))
         {
-            moverJ3Negativo();
+            moverNegativoJ3();
         }
 
 
@@ -143,7 +143,7 @@ public class wandiController : MonoBehaviour
 
 
 
-    public void moverJ2PositivoJ2()
+    public void moverPositivoJ2()
     {
         grauDaRotacoJ2 = J2.transform.localRotation.eulerAngles.z + velocityJ2 * Time.deltaTime;
 
@@ -155,7 +155,7 @@ public class wandiController : MonoBehaviour
         }
     }
 
-    public void moverJ2NegativoJ2()
+    public void moverNegativoJ2()
     {
         grauDaRotacoJ2 = J2.transform.localRotation.eulerAngles.z - velocityJ2 * Time.deltaTime;
 
@@ -167,19 +167,19 @@ public class wandiController : MonoBehaviour
         }
     }
 
-    public void moverJ3Positivo()
+    public void moverPositivoJ3()
     {
         grauDaRotacoJ3 = J3.transform.localRotation.eulerAngles.z + velocityJ3 * Time.deltaTime;
 
         grauDaRotacoJ3 = Mathf.Clamp(grauDaRotacoJ3, limiteInferiorJ3, limiteSuperiorJ3);
 
-        if(grauDaRotacoJ3 >= limiteInferiorJ3 && grauDaRotacoJ3 <= limiteSuperiorJ3)
+        if (grauDaRotacoJ3 >= limiteInferiorJ3 && grauDaRotacoJ3 <= limiteSuperiorJ3)
         {
             J3.transform.localRotation = Quaternion.Euler(0, 0, grauDaRotacoJ3);
         }
     }
 
-    public void moverJ3Negativo()
+    public void moverNegativoJ3()
     {
         grauDaRotacoJ3 = J3.transform.localRotation.eulerAngles.z - velocityJ3 * Time.deltaTime;
 
@@ -190,4 +190,6 @@ public class wandiController : MonoBehaviour
             J3.transform.localRotation = Quaternion.Euler(0, 0, grauDaRotacoJ3);
         }
     }
+
+
 }
