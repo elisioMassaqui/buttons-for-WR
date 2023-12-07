@@ -42,8 +42,8 @@ public class wandiController : MonoBehaviour
     public GameObject J4;
     public float velocityJ4 = 0f;
     public Slider sliderVelocityJ4;
-    public float limiteSuperiorJ4;
-    public float limiteInferiorJ4;
+    public float limiteEsquerdoJ4;
+    public float limiteDireitoJ4;
     public float grauDaRotacoJ4;
     public bool J4POSITIVO = false;
     public bool J4NEGATIVO = false;
@@ -200,6 +200,30 @@ public class wandiController : MonoBehaviour
         if (grauDaRotacoJ3 >= limiteInferiorJ3 && grauDaRotacoJ3 <= limiteSuperiorJ3)
         {
             J3.transform.localRotation = Quaternion.Euler(0, 0, grauDaRotacoJ3);
+        }
+    }
+
+    public void moverNegativoJ4()
+    {
+        grauDaRotacoJ4 = J4.transform.localRotation.eulerAngles.y - velocityJ4 * Time.deltaTime;
+
+        grauDaRotacoJ4 = Mathf.Clamp(grauDaRotacoJ4, limiteEsquerdoJ4, limiteDireitoJ4);
+
+        if(grauDaRotacoJ4 >= limiteEsquerdoJ4 && grauDaRotacoJ4 <= limiteDireitoJ4)
+        {
+            J4.transform.localRotation = Quaternion.Euler(0, grauDaRotacoJ4, 0);
+        }
+    }
+
+    public void moverPositivoJ4()
+    {
+        grauDaRotacoJ4 = J4.transform.localRotation.eulerAngles.y + velocityJ4 * Time.deltaTime;
+
+        grauDaRotacoJ4 = Mathf.Clamp(grauDaRotacoJ4, limiteEsquerdoJ4, limiteDireitoJ4);
+
+        if (grauDaRotacoJ4 >= limiteEsquerdoJ4 && grauDaRotacoJ4 <= limiteDireitoJ4)
+        {
+            J4.transform.localRotation = Quaternion.Euler(0, grauDaRotacoJ4, 0);
         }
     }
 
