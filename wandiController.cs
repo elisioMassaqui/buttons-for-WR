@@ -58,9 +58,11 @@ public class wandiController : MonoBehaviour
     // Update is called once per frame.
     void Update()
     {
+        // A velocidade da nossa junta recebe o valor do Slider.
         velocityJ1 = sliderVelocityJ1.value;
         velocityJ2 = sliderVelocityJ2.value;
         velocityJ3 = sliderVelocityJ3.value;
+        velocityJ4 = sliderVelocityJ4.value;
         
 
         if(J1POSITIVO == true)
