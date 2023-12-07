@@ -38,6 +38,16 @@ public class wandiController : MonoBehaviour
     public bool J3POSITIVO = false;
     public bool J3NEGATIVO = false;
 
+    //Vida Da Nossa Junta4 e verificações booleanas.
+    public GameObject J4;
+    public float velocityJ4 = 0f;
+    public Slider sliderVelocityJ4;
+    public float limiteSuperiorJ4;
+    public float limiteInferiorJ4;
+    public float grauDaRotacoJ4;
+    public bool J4POSITIVO = false;
+    public bool J4NEGATIVO = false;
+
 
     // Start is called before the first frame update
     void Start()
