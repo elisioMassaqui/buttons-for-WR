@@ -48,6 +48,19 @@ public class wandiController : MonoBehaviour
     public bool J4POSITIVO = false;
     public bool J4NEGATIVO = false;
 
+    //Vida Da Nossa Junta5 e verificações booleanas.
+    public GameObject J5;
+    public float velocityJ5 = 0f;
+    public Slider sliderVelocityJ5;
+    public float limiteSuperiorJ5;
+    public float limiteInferiorJ5;
+    public float grauDaRotacoJ5;
+    public bool J5POSITIVO = false;
+    public bool J5NEGATIVO = false;
+
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -94,6 +107,15 @@ public class wandiController : MonoBehaviour
         {
             moverNegativoJ3();
         }
+        if (J4POSITIVO == true)
+        {
+            moverPositivoJ4();
+        }
+        if (J4NEGATIVO == true) 
+        {
+            moverNegativoJ4();
+        }
+        
 
         // Controle do Teclado Junta 1
         if (Input.GetKey(KeyCode.A))
