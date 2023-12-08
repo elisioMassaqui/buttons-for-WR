@@ -161,7 +161,7 @@ public class wandiController : MonoBehaviour
         {
             moverPositivoJ4();
         }
-        if(Input.GetKey(KeyCode.Alpha4) && Input.GetKey(KeyCode.RightArrow))
+        if(Input.GetKey(KeyCode.Alpha4) && Input.GetKey(KeyCode.LeftArrow))
         {
             moverNegativoJ4();
         }
@@ -265,6 +265,30 @@ public class wandiController : MonoBehaviour
         if (grauDaRotacoJ4 >= limiteEsquerdoJ4 && grauDaRotacoJ4 <= limiteDireitoJ4)
         {
             J4.transform.localRotation = Quaternion.Euler(0, grauDaRotacoJ4, 0);
+        }
+    }
+
+    public void moverPositivoJ5()
+    {
+        grauDaRotacoJ5 = J5.transform.localRotation.eulerAngles.z + velocityJ5 * Time.deltaTime;
+
+        grauDaRotacoJ5 = Mathf.Clamp(grauDaRotacoJ5, limiteInferiorJ5, limiteSuperiorJ5);
+
+        if(grauDaRotacoJ5 >= limiteInferiorJ5 && grauDaRotacoJ5 <= limiteSuperiorJ5) 
+        {
+            J5.transform.localRotation = Quaternion.Euler(0, 0, grauDaRotacoJ5);
+        }
+    }
+
+    public void moverNegativoJ5()
+    {
+        grauDaRotacoJ5 = J5.transform.localRotation.eulerAngles.z - velocityJ5 * Time.deltaTime;
+
+        grauDaRotacoJ5 = Mathf.Clamp(grauDaRotacoJ5, limiteInferiorJ5, limiteSuperiorJ5);
+
+        if(grauDaRotacoJ5 >= limiteInferiorJ5 && grauDaRotacoJ5 < limiteSuperiorJ5)
+        {
+            J5.transform.localRotation = Quaternion.Euler(0, 0, grauDaRotacoJ5);
         }
     }
 
