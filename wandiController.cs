@@ -76,6 +76,7 @@ public class wandiController : MonoBehaviour
         velocityJ2 = sliderVelocityJ2.value;
         velocityJ3 = sliderVelocityJ3.value;
         velocityJ4 = sliderVelocityJ4.value;
+        velocityJ5 = sliderVelocityJ5.value;
         
 
         if(J1POSITIVO == true)
@@ -115,6 +116,14 @@ public class wandiController : MonoBehaviour
         {
             moverNegativoJ4();
         }
+        if (J5POSITIVO == true)
+        {
+         
+        }
+        if (J5NEGATIVO == true)
+        {
+
+        }
         
 
         // Controle do Teclado Junta 1
@@ -145,6 +154,16 @@ public class wandiController : MonoBehaviour
         if(Input.GetKey(KeyCode.Alpha3) && Input.GetKey(KeyCode.LeftArrow))
         {
             moverNegativoJ3();
+        }
+
+        // Controle do Teclado Junta 4.
+        if (Input.GetKey(KeyCode.Alpha4) && Input.GetKey(KeyCode.RightArrow))
+        {
+            moverPositivoJ4();
+        }
+        if(Input.GetKey(KeyCode.Alpha4) && Input.GetKey(KeyCode.RightArrow))
+        {
+            moverNegativoJ4();
         }
 
 
