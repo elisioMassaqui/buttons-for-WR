@@ -19,7 +19,11 @@ public class robotHandController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        sliderBase.minValue = -1;
+        sliderArm.minValue = 1;
+
+        sliderBase.maxValue = 1;
+        sliderArm.maxValue = 1;
     }
 
     // Update is called once per frame
