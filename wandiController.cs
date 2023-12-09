@@ -77,95 +77,12 @@ public class wandiController : MonoBehaviour
         velocityJ3 = sliderVelocityJ3.value;
         velocityJ4 = sliderVelocityJ4.value;
         velocityJ5 = sliderVelocityJ5.value;
+
+
+    cubinhos();  
+
+    inputKey();     
         
-
-        if(J1POSITIVO == true)
-        {
-            moverPositivoJ1();
-        }
-        if(J1NEGATIVO == true)
-        {
-            moverNegativoJ1();
-        }
-
-
-        if(J2POSITIVO == true)
-        {
-            moverPositivoJ2();
-        }
-
-        if(J2NEGATIVO == true)
-        {
-            moverNegativoJ2();
-        }
-
-
-        if (J3POSITIVO == true)
-        {
-            moverPositivoJ3();
-        }
-        if(J3NEGATIVO == true)
-        {
-            moverNegativoJ3();
-        }
-        if (J4POSITIVO == true)
-        {
-            moverPositivoJ4();
-        }
-        if (J4NEGATIVO == true) 
-        {
-            moverNegativoJ4();
-        }
-        if (J5POSITIVO == true)
-        {
-         
-        }
-        if (J5NEGATIVO == true)
-        {
-
-        }
-        
-
-        // Controle do Teclado Junta 1
-        if (Input.GetKey(KeyCode.A))
-        {
-            moverPositivoJ1();
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            moverNegativoJ1();
-        }
-
-        // Controle do Teclado Junta 2
-        if (Input.GetKey(KeyCode.Alpha2) && Input.GetKey(KeyCode.RightArrow))
-        {
-            moverPositivoJ2();
-        }
-        if (Input.GetKey(KeyCode.Alpha2) && Input.GetKey(KeyCode.LeftArrow))
-        {
-            moverNegativoJ2();
-        }
-
-        // Controle do Teclado Junta 3.
-        if (Input.GetKey(KeyCode.Alpha3) && Input.GetKey(KeyCode.RightArrow))
-        {
-            moverPositivoJ3();
-        }
-        if(Input.GetKey(KeyCode.Alpha3) && Input.GetKey(KeyCode.LeftArrow))
-        {
-            moverNegativoJ3();
-        }
-
-        // Controle do Teclado Junta 4.
-        if (Input.GetKey(KeyCode.Alpha4) && Input.GetKey(KeyCode.RightArrow))
-        {
-            moverPositivoJ4();
-        }
-        if(Input.GetKey(KeyCode.Alpha4) && Input.GetKey(KeyCode.LeftArrow))
-        {
-            moverNegativoJ4();
-        }
-
 
     }
 
@@ -292,5 +209,98 @@ public class wandiController : MonoBehaviour
         }
     }
 
+    void cubinhos()
+    {
+        
+        if(J1POSITIVO == true)
+        {
+            moverPositivoJ1();
+        }
+        if(J1NEGATIVO == true)
+        {
+            moverNegativoJ1();
+        }
+
+
+        if(J2POSITIVO == true)
+        {
+            moverPositivoJ2();
+        }
+
+        if(J2NEGATIVO == true)
+        {
+            moverNegativoJ2();
+        }
+
+
+        if (J3POSITIVO == true)
+        {
+            moverPositivoJ3();
+        }
+        if(J3NEGATIVO == true)
+        {
+            moverNegativoJ3();
+        }
+        if (J4POSITIVO == true)
+        {
+            moverPositivoJ4();
+        }
+        if (J4NEGATIVO == true) 
+        {
+            moverNegativoJ4();
+        }
+        if (J5POSITIVO == true)
+        {
+         
+        }
+        if (J5NEGATIVO == true)
+        {
+
+        }
+    }
+
+    void inputKey()
+    {
+              // Controle do Teclado Junta 1
+        if (Input.GetKey(KeyCode.A))
+        {
+            moverPositivoJ1();
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            moverNegativoJ1();
+        }
+
+        // Controle do Teclado Junta 2
+        if (Input.GetKey(KeyCode.Alpha2) && Input.GetKey(KeyCode.RightArrow))
+        {
+            moverPositivoJ2();
+        }
+        if (Input.GetKey(KeyCode.Alpha2) && Input.GetKey(KeyCode.LeftArrow))
+        {
+            moverNegativoJ2();
+        }
+
+        // Controle do Teclado Junta 3.
+        if (Input.GetKey(KeyCode.Alpha3) && Input.GetKey(KeyCode.RightArrow))
+        {
+            moverPositivoJ3();
+        }
+        if(Input.GetKey(KeyCode.Alpha3) && Input.GetKey(KeyCode.LeftArrow))
+        {
+            moverNegativoJ3();
+        }
+
+        // Controle do Teclado Junta 4.
+        if (Input.GetKey(KeyCode.Alpha4) && Input.GetKey(KeyCode.RightArrow))
+        {
+            moverPositivoJ4();
+        }
+        if(Input.GetKey(KeyCode.Alpha4) && Input.GetKey(KeyCode.LeftArrow))
+        {
+            moverNegativoJ4();
+        }
+
+    }
 
 }
