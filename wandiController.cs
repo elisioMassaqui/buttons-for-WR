@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 public class wandiController : MonoBehaviour
 {
 
-    //Vida Da Nossa JuntaJ1 e verificações booleanas.
+    //Vida Da Nossa JuntaJ1 e verificaï¿½ï¿½es booleanas.
     public GameObject J1;
     public float velocityJ1 = 0f;
     public Slider sliderVelocityJ1;
@@ -18,7 +18,7 @@ public class wandiController : MonoBehaviour
     public bool J1POSITIVO = false;
     public bool J1NEGATIVO = false;
 
-    //Vida Da Nossa Junta2 e verificações booleanas.
+    //Vida Da Nossa Junta2 e verificaï¿½ï¿½es booleanas.
     public GameObject J2;
     public float velocityJ2 = 0f;
     public Slider sliderVelocityJ2;
@@ -28,7 +28,7 @@ public class wandiController : MonoBehaviour
     public bool J2POSITIVO = false;
     public bool J2NEGATIVO = false;
 
-    //Vida Da Nossa Junta3 e verificações booleanas.
+    //Vida Da Nossa Junta3 e verificaï¿½ï¿½es booleanas.
     public GameObject J3;
     public float velocityJ3 = 0f;
     public Slider sliderVelocityJ3;
@@ -38,7 +38,7 @@ public class wandiController : MonoBehaviour
     public bool J3POSITIVO = false;
     public bool J3NEGATIVO = false;
 
-    //Vida Da Nossa Junta4 e verificações booleanas.
+    //Vida Da Nossa Junta4 e verificaï¿½ï¿½es booleanas.
     public GameObject J4;
     public float velocityJ4 = 0f;
     public Slider sliderVelocityJ4;
@@ -48,7 +48,7 @@ public class wandiController : MonoBehaviour
     public bool J4POSITIVO = false;
     public bool J4NEGATIVO = false;
 
-    //Vida Da Nossa Junta5 e verificações booleanas.
+    //Vida Da Nossa Junta5 e verificaï¿½ï¿½es booleanas.
     public GameObject J5;
     public float velocityJ5 = 0f;
     public Slider sliderVelocityJ5;
