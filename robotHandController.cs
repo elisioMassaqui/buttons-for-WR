@@ -29,6 +29,7 @@ public class robotHandController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ChekInput();
+        movement();
     }
 }
