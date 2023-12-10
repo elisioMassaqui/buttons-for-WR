@@ -76,8 +76,6 @@ void UpdateArm2ZRotation()
     arm2ZRot = Mathf.Clamp(arm2ZRot, arm2ZMin, arm2ZMax);
     arm2Z.localEulerAngles = new Vector3(arm2Z.localEulerAngles.x, arm2Z.localEulerAngles.y, arm2ZRot);
 }
-
-
     public void resetSliders()
     {
         baseSliderValue = 0.0f;
