@@ -46,28 +46,37 @@ public class arm : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        baseSliderValue = sliderBase.value;
-        armSliderValue = sliderArm.value;
-        armSliderValue2 = sliderArm2.value;
+   void Update()
+{
+    UpdateBaseRotation();
+    UpdateArmXRotation();
+    UpdateArm2ZRotation();
+}
 
-        baseYRot += baseSliderValue * baseRate * Time.deltaTime;
-        baseYRot = Mathf.Clamp(baseYRot, baseYMin, baseYMax);
-        
-        baseY.localEulerAngles = new Vector3(baseY.localEulerAngles.x, baseYRot, baseY.localEulerAngles.z);
+void UpdateBaseRotation()
+{
+    baseSliderValue = sliderBase.value;
+    baseYRot += baseSliderValue * baseRate * Time.deltaTime;
+    baseYRot = Mathf.Clamp(baseYRot, baseYMin, baseYMax);
+    baseY.localEulerAngles = new Vector3(baseY.localEulerAngles.x, baseYRot, baseY.localEulerAngles.z);
+}
 
-        armXRot += armSliderValue * armRate * Time.deltaTime;
-        armXRot = Mathf.Clamp(armXRot, armXMin, armXMax);
+void UpdateArmXRotation()
+{
+    armSliderValue = sliderArm.value;
+    armXRot += armSliderValue * armRate * Time.deltaTime;
+    armXRot = Mathf.Clamp(armXRot, armXMin, armXMax);
+    armX.localEulerAngles = new Vector3(armXRot, armX.localEulerAngles.y, armX.localEulerAngles.z);
+}
 
-        armX.localEulerAngles = new Vector3(armXRot, armX.localEulerAngles.y, armX.localEulerAngles.z);
+void UpdateArm2ZRotation()
+{
+    armSliderValue2 = sliderArm2.value;
+    arm2ZRot += armSliderValue2 * arm2Rate * Time.deltaTime;
+    arm2ZRot = Mathf.Clamp(arm2ZRot, arm2ZMin, arm2ZMax);
+    arm2Z.localEulerAngles = new Vector3(arm2Z.localEulerAngles.x, arm2Z.localEulerAngles.y, arm2ZRot);
+}
 
-        arm2ZRot += armSliderValue2 * arm2Rate * Time.deltaTime;
-        arm2ZRot = Mathf.Clamp(arm2ZRot, arm2ZMin, arm2ZMax);
-
-        arm2Z.localEulerAngles = new Vector3(arm2Z.localEulerAngles.x, arm2Z.localEulerAngles.y, arm2ZRot);
-
-    }
 
     public void resetSliders()
     {
