@@ -17,6 +17,7 @@ public class quaternion : MonoBehaviour
     public float RotationJ1Z; // progresso da nossa rotaçãoZ, ótimo pra exibir na tela, alias todo valor pode ser exibido em tempo real!
     public float valorButtonMin = -1;
     public float valorButtonMax = 1;
+    
     // Start is called before the first frame update
     void Start()
     {
