@@ -22,6 +22,8 @@ public class quaternion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        velocidadeJ1 = sliderJ1.value;
+
         sliderJ1.minValue = -1;
         sliderJ1.maxValue = 1;
         UpdateJ1();
