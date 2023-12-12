@@ -7,14 +7,14 @@ public class quaternion : MonoBehaviour
 {
      //Vida J1
     public Transform J1; // Transformação do Nosso objecto!
-    public float velocidadeJ1;
+    public float velocidadeJ1; // Velocidade dda J1;
     public Slider sliderJ1; // slider de controle de velocidade!
-    public float valorDoSliderJ1; // velocidade do nosso objecto!
+    public float valorDoSliderJ1; // valor do nosso slider!
     public float J1Min; // Valor Minimo da rotação!
     public float J1Max; // Valor Máximo da rotação!
-    public float RotationJ1X; // progresso da nossa rotação, ótimo pra exibir na tela, alias todo valor pode ser exibido em tempo real!
-    public float RotationJ1Y;
-    public float RotationJ1Z;
+    public float RotationJ1X; // progresso da nossa rotaçãoX, ótimo pra exibir na tela, alias todo valor pode ser exibido em tempo real!
+    public float RotationJ1Y; // progresso da nossa rotaçãoY, ótimo pra exibir na tela, alias todo valor pode ser exibido em tempo real!
+    public float RotationJ1Z; // progresso da nossa rotaçãoZ, ótimo pra exibir na tela, alias todo valor pode ser exibido em tempo real!
     // Start is called before the first frame update
     void Start()
     {
