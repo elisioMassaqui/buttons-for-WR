@@ -33,5 +33,7 @@ public class quaternion : MonoBehaviour
     {
         grausDaRotacao += valorDoSliderJ1 * velocidadeDaRotacaoJ1 * Time.deltaTime;
         grausDaRotacao = Mathf.Clamp(grausDaRotacao, J1Min, J1Max); 
+
+        
     }
 }
