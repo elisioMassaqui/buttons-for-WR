@@ -177,6 +177,9 @@ public class quaternion : MonoBehaviour
         sliderJ4.minValue = -1;
         sliderJ4.maxValue = 1;
 
+        sliderJ5.minValue = -1;
+        sliderJ5.maxValue = 1;
+
         UpdateJ1();
         UpdateJ2();
         UpdateJ3();
