@@ -256,6 +256,8 @@ public class quaternion : MonoBehaviour
     }
 
     //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+
+        //Botões J1
        public void UpdateJ1Min()
     {
         valorDoSliderJ1 = sliderJ1.value;
@@ -273,6 +275,7 @@ public class quaternion : MonoBehaviour
     }
 
 
+        //Botões J2
         public void UpdateJ2Min()
     {
         valorDoSliderJ2 = sliderJ2.value;
@@ -287,6 +290,60 @@ public class quaternion : MonoBehaviour
         RotationJ2Z += valorButtonJ2Max * velocidadeJ2 * Time.deltaTime;
         RotationJ2Z = Mathf.Clamp(RotationJ2Z, J2Min, J2Max);
         J2.localRotation = Quaternion.Euler(RotationJ2X, RotationJ2Y, RotationJ2Z);
+    }
+
+
+        //Botões J3
+            public void UpdateJ3Min()
+    {
+        valorDoSliderJ3 = sliderJ3.value;
+        RotationJ3Z += valorButtonJ3Min * velocidadeJ3 * Time.deltaTime;
+        RotationJ3Z = Mathf.Clamp(RotationJ3Z, J3Min, J3Max);
+        J3.localRotation = Quaternion.Euler(RotationJ3X, RotationJ3Y, RotationJ3Z);
+    }
+
+       public void UpdateJ3Max()
+    {
+        valorDoSliderJ3 = sliderJ3.value;
+        RotationJ3Z += valorButtonJ2Max * velocidadeJ3 * Time.deltaTime;
+        RotationJ3Z = Mathf.Clamp(RotationJ3Z, J3Min, J3Max);
+        J3.localRotation = Quaternion.Euler(RotationJ3X, RotationJ3Y, RotationJ3Z);
+    }
+
+
+        //Botões J4
+            public void UpdateJ4Min()
+    {
+        valorDoSliderJ4 = sliderJ4.value;
+        RotationJ4Y += valorButtonJ4Min * velocidadeJ4 * Time.deltaTime;
+        RotationJ4Y = Mathf.Clamp(RotationJ4Y, J4Min, J4Max);
+        J4.localRotation = Quaternion.Euler(RotationJ4X, RotationJ4Y, RotationJ4Z);
+    }
+
+       public void UpdateJ4Max()
+    {
+        valorDoSliderJ4 = sliderJ4.value;
+        RotationJ4Y += valorButtonJ4Max * velocidadeJ4 * Time.deltaTime;
+        RotationJ4Y = Mathf.Clamp(RotationJ4Y, J4Min, J4Max);
+        J4.localRotation = Quaternion.Euler(RotationJ4X, RotationJ4Y, RotationJ4Z);
+    } 
+
+
+        //Botões J5
+            public void UpdateJ5Min()
+    {
+        valorDoSliderJ5 = sliderJ5.value;
+        RotationJ5Z += valorButtonJ5Min * velocidadeJ5 * Time.deltaTime;
+        RotationJ5Z = Mathf.Clamp(RotationJ5Z, J5Min, J5Max);
+        J5.localRotation = Quaternion.Euler(RotationJ5X, RotationJ5Y, RotationJ5Z);
+    }
+
+       public void UpdateJ2Max()
+    {
+        valorDoSliderJ5 = sliderJ5.value;
+        RotationJ5Z += valorButtonJ5Max * velocidadeJ5 * Time.deltaTime;
+        RotationJ5Z = Mathf.Clamp(RotationJ5Z, J5Min, J5Max);
+        J5.localRotation = Quaternion.Euler(RotationJ5X, RotationJ5Y, RotationJ5Z);
     }
 
 }
