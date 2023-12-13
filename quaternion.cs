@@ -76,7 +76,7 @@ public class quaternion : MonoBehaviour
 
         sliderJ1.minValue = -1;
         sliderJ1.maxValue = 1;
-        
+
         sliderJ2.minValue = -1;
         sliderJ2.maxValue = 1;
         UpdateJ1();
@@ -89,10 +89,22 @@ public class quaternion : MonoBehaviour
         RotationJ1Y = Mathf.Clamp(RotationJ1Y, J1YMin, J1YMax);
         J1.localRotation = Quaternion.Euler(RotationJ1X, RotationJ1Y, RotationJ1Z);
     }
+
+      public void UpdateJ2()
+    {
+        valorDoSliderJ2 = sliderJ2.value;
+        RotationJ2X += valorDoSliderJ2 * velocidadeJ2 * Time.deltaTime;
+        RotationJ1X = Mathf.Clamp(RotationJ2X, J2XMin, J2XMax);
+        J2.localRotation = Quaternion.Euler(RotationJ2X, RotationJ2Y, RotationJ2Z);
+    }
+
     public void resetarValores()
     {
         sliderJ1.value = 0f;
         valorDoSliderJ1 = 0f;
+
+        sliderJ2.value = 0f;
+        valorDoSliderJ2 = 0f;
     }
 
        public void UpdateJ1Min()
