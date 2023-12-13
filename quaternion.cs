@@ -73,8 +73,8 @@ public class quaternion : MonoBehaviour
     public Transform J3; // Transformação do Nosso objecto!
     public float velocidadeJ3; // Velocidade dda J3;
 
-    [Header("Eixos de J3, Usaremos X")]
-    // eixos de rotação da nossa J3, usaremos o X.
+    [Header("Eixos de J3, Usaremos Z")]
+    // eixos de rotação da nossa J3, usaremos o Z.
     public float RotationJ3X; // progresso da nossa rotaçãoX, ótimo pra exibir na tela, alias todo valor pode ser exibido em tempo real!
     public float RotationJ3Y; // progresso da nossa rotaçãoY, ótimo pra exibir na tela, alias todo valor pode ser exibido em tempo real!
     public float RotationJ3Z; // progresso da nossa rotaçãoZ, ótimo pra exibir na tela, alias todo valor pode ser exibido em tempo real!
@@ -90,9 +90,9 @@ public class quaternion : MonoBehaviour
     public float valorButtonJ3Max = 1; //valor do botão pra ser incrementado a rotação!
 
     [Header("Limites J3")]
-    // valor da rotação Minima e maxima do eixo X.
-    public float J3Min; // Valor Minimo da rotaçãoX!
-    public float J3Max; // Valor Máximo da rotaçãoX!
+    // valor da rotação Minima e maxima do eixo Z.
+    public float J3Min; // Valor Minimo da rotaçãoZ!
+    public float J3Max; // Valor Máximo da rotaçãoZ!
     
     #endregion
     // Start is called before the first frame update
@@ -110,8 +110,13 @@ public class quaternion : MonoBehaviour
 
         sliderJ2.minValue = -1;
         sliderJ2.maxValue = 1;
+
+        sliderJ3.minValue = -1;
+        sliderJ3.maxValue = 1;
         UpdateJ1();
         UpdateJ2();
+        UpdateJ3();
+       
     }
 
     public void UpdateJ1()
@@ -128,6 +133,14 @@ public class quaternion : MonoBehaviour
         RotationJ2Z += valorDoSliderJ2 * velocidadeJ2 * Time.deltaTime;
         RotationJ2Z = Mathf.Clamp(RotationJ2Z, J2Min, J2Max);
         J2.localRotation = Quaternion.Euler(RotationJ2X, RotationJ2Y, RotationJ2Z);
+    }
+
+          public void UpdateJ3()
+    {
+        valorDoSliderJ3 = sliderJ3.value;
+        RotationJ3Z += valorDoSliderJ3 * velocidadeJ3 * Time.deltaTime;
+        RotationJ3Z = Mathf.Clamp(RotationJ3Z, J3Min, J3Max);
+        J3.localRotation = Quaternion.Euler(RotationJ3X, RotationJ3Y, RotationJ3Z);
     }
 
     public void resetarValores()
