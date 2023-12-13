@@ -178,7 +178,7 @@ public class quaternion : MonoBehaviour
         J3.localRotation = Quaternion.Euler(RotationJ3X, RotationJ3Y, RotationJ3Z);
     }
 
-        public void UpdateJ3()
+        public void UpdateJ4()
     {
         valorDoSliderJ4 = sliderJ4.value;
         RotationJ4Y += valorDoSliderJ4 * velocidadeJ4 * Time.deltaTime;
