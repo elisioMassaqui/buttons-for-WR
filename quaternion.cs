@@ -164,6 +164,7 @@ public class quaternion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //VALORES MAXIMOS MINIMOS DOS SLIDERS NA UI DE CADA JUNTA, ESSE VALOR É DO MOVIMENTO * VELCOCIDADE.
 
         sliderJ1.minValue = -1;
         sliderJ1.maxValue = 1;
@@ -187,6 +188,12 @@ public class quaternion : MonoBehaviour
         UpdateJ5();
        
     }
+
+    //Atualização das nossas operaçoes pra rotacionar o objecto!
+    //primeiro o valor do slider recebe o valor do slider do input no UI do usuario
+    //segundo o valor da rotação recebe o valor do slider vezes velociade do objecto vezes variaçao do tempo real.
+    //terceiro difinimos limites fazendo o valor da rotação com limite direito e limite esquerdo, pra o valor da rotação permanecer dentre os limites.
+    //quarto é aqui onde aplicamos a operação Quaternion.Euler com as rotações do objecto cuja unica rotação que está sofrer alteração é do eixo Rotation(nome da junta e eixo nesse caso J1Y) atribuindo na rotação local do nosso objecto.
 
     public void UpdateJ1()
     {
@@ -229,6 +236,7 @@ public class quaternion : MonoBehaviour
     }
 
 
+    //Tem que resetar o slider e o valor do slider pra não houver acumulo de dados e pra não rotar continuamente sozinho.
     public void resetarValores()
     {
         sliderJ1.value = 0f;
@@ -247,6 +255,7 @@ public class quaternion : MonoBehaviour
         valorDoSliderJ5 = 0f;
     }
 
+    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
        public void UpdateJ1Min()
     {
         valorDoSliderJ1 = sliderJ1.value;
