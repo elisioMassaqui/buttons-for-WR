@@ -8,7 +8,7 @@ public class quaternion : MonoBehaviour
      #region ConfiguracoesJ1
 
      [Header("Vida J1")]
-     //Vida J1 e sua velocidade...
+     //Vida J1 e sua velocidade.
     public Transform J1; // Transformação do Nosso objecto!
     public Slider sliderVelocityJ1;
     public float velocidadeJ1; // Velocidade dda J1;
