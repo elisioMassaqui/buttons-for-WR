@@ -34,6 +34,36 @@ public class quaternion : MonoBehaviour
     public float J1YMax; // Valor Máximo da rotaçãoY!
     
     #endregion
+
+         #region ConfiguracoesJ2
+
+     [Header("Vida J2")]
+     //Vida J2 e sua velocidade.
+    public Transform J2; // Transformação do Nosso objecto!
+    public float velocidadeJ2; // Velocidade dda J2;
+
+    [Header("Eixos de J2, Usaremos X")]
+    // eixos de rotação da nossa J1, usaremos o X.
+    public float RotationJ2X; // progresso da nossa rotaçãoX, ótimo pra exibir na tela, alias todo valor pode ser exibido em tempo real!
+    public float RotationJ2Y; // progresso da nossa rotaçãoY, ótimo pra exibir na tela, alias todo valor pode ser exibido em tempo real!
+    public float RotationJ2Z; // progresso da nossa rotaçãoZ, ótimo pra exibir na tela, alias todo valor pode ser exibido em tempo real!
+    
+    [Header("Slider e valor do slider J2")]
+    //Incremento e decremento num unico slider.
+    public Slider sliderJ2; // slider de controle de velocidade!
+    public float valorDoSliderJ2; // valor do nosso slider!
+
+    [Header("Botões J2")]
+    //botão de incrementar e decrementar.
+    public float valorButtonJ2Min = -1; //valor do botão pra ser decrementado a rotação!
+    public float valorButtonJ2Max = 1; //valor do botão pra ser incrementado a rotação!
+
+    [Header("Limites J2")]
+    // valor da rotação Minima e maxima do eixo X.
+    public float J2XMin; // Valor Minimo da rotaçãoX!
+    public float J2XMax; // Valor Máximo da rotaçãoX!
+    
+    #endregion
     // Start is called before the first frame update
     void Start()
     {
