@@ -80,6 +80,7 @@ public class quaternion : MonoBehaviour
         sliderJ2.minValue = -1;
         sliderJ2.maxValue = 1;
         UpdateJ1();
+        UpdateJ2();
     }
 
     public void UpdateJ1()
