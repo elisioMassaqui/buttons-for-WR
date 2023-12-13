@@ -143,9 +143,14 @@ public class quaternion : MonoBehaviour
 
         sliderJ3.minValue = -1;
         sliderJ3.maxValue = 1;
+
+        sliderJ4.minValue = -1;
+        sliderJ4.maxValue = 1;
+
         UpdateJ1();
         UpdateJ2();
         UpdateJ3();
+        UpdateJ4();
        
     }
 
@@ -173,6 +178,15 @@ public class quaternion : MonoBehaviour
         J3.localRotation = Quaternion.Euler(RotationJ3X, RotationJ3Y, RotationJ3Z);
     }
 
+        public void UpdateJ3()
+    {
+        valorDoSliderJ4 = sliderJ4.value;
+        RotationJ4Y += valorDoSliderJ4 * velocidadeJ4 * Time.deltaTime;
+        RotationJ4Y = Mathf.Clamp(RotationJ4Y, J3Min, J3Max);
+        J4.localRotation = Quaternion.Euler(RotationJ4X, RotationJ4Y, RotationJ4Z);
+    }
+
+
     public void resetarValores()
     {
         sliderJ1.value = 0f;
@@ -183,6 +197,9 @@ public class quaternion : MonoBehaviour
 
         sliderJ3.value = 0f;
         valorDoSliderJ3 = 0f;
+
+        sliderJ4.value = 0f;
+        valorDoSliderJ4 = 0f;
     }
 
        public void UpdateJ1Min()
