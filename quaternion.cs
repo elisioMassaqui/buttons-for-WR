@@ -23,7 +23,6 @@ public class quaternion : MonoBehaviour
     //Incremento e decremento num unico slider.
     public Slider sliderJ1; // slider de controle de velocidade!
     public float valorDoSliderJ1; // valor do nosso slider!
-    public Slider sliderVelocityJ1;
 
     [Header("Botões J1")]
     //botão de incrementar e decrementar.
@@ -42,7 +41,7 @@ public class quaternion : MonoBehaviour
      [Header("Vida J2")]
      //Vida J2 e sua velocidade.
     public Transform J2; // Transformação do Nosso objecto!
-    public Slider sliderVelocityJ3;
+    public Slider sliderVelocityJ2;
     public float velocidadeJ2; // Velocidade dda J2;
 
     [Header("Eixos de J2, Usaremos Z")]
@@ -55,7 +54,6 @@ public class quaternion : MonoBehaviour
     //Incremento e decremento num unico slider.
     public Slider sliderJ2; // slider de controle de velocidade!
     public float valorDoSliderJ2; // valor do nosso slider!
-    public float sliderVelocityJ2 = 0f;
 
     [Header("Botões J2")]
     //botão de incrementar e decrementar.
@@ -88,7 +86,6 @@ public class quaternion : MonoBehaviour
     //Incremento e decremento num unico slider.
     public Slider sliderJ3; // slider de controle de velocidade!
     public float valorDoSliderJ3; // valor do nosso slider!
-    public float sliderVelocityJ3 = 0f;
 
     [Header("Botões J3")]
     //botão de incrementar e decrementar.
@@ -120,7 +117,6 @@ public class quaternion : MonoBehaviour
     //Incremento e decremento num unico slider.
     public Slider sliderJ4; // slider de controle de velocidade!
     public float valorDoSliderJ4; // valor do nosso slider!
-    public float sliderVelocityJ4 = 0f;
 
     [Header("Botões J4")]
     //botão de incrementar e decrementar.
