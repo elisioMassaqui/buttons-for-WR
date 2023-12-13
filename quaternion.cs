@@ -30,8 +30,8 @@ public class quaternion : MonoBehaviour
 
     [Header("Limites J1")]
     // valor da rotação Minima e maxima do eixo Y.
-    public float J1YMin; // Valor Minimo da rotaçãoY!
-    public float J1YMax; // Valor Máximo da rotaçãoY!
+    public float J1Min; // Valor Minimo da rotaçãoY!
+    public float J1Max; // Valor Máximo da rotaçãoY!
     
     #endregion
 
@@ -60,8 +60,8 @@ public class quaternion : MonoBehaviour
 
     [Header("Limites J2")]
     // valor da rotação Minima e maxima do eixo X.
-    public float J2XMin; // Valor Minimo da rotaçãoX!
-    public float J2XMax; // Valor Máximo da rotaçãoX!
+    public float J2Min; // Valor Minimo da rotaçãoX!
+    public float J2Max; // Valor Máximo da rotaçãoX!
     
     #endregion
     // Start is called before the first frame update
@@ -87,15 +87,15 @@ public class quaternion : MonoBehaviour
     {
         valorDoSliderJ1 = sliderJ1.value;
         RotationJ1Y += valorDoSliderJ1 * velocidadeJ1 * Time.deltaTime;
-        RotationJ1Y = Mathf.Clamp(RotationJ1Y, J1YMin, J1YMax);
+        RotationJ1Y = Mathf.Clamp(RotationJ1Y, J1Min, J1Max);
         J1.localRotation = Quaternion.Euler(RotationJ1X, RotationJ1Y, RotationJ1Z);
     }
 
       public void UpdateJ2()
     {
         valorDoSliderJ2 = sliderJ2.value;
-        RotationJ2X += valorDoSliderJ2 * velocidadeJ2 * Time.deltaTime;
-        RotationJ1X = Mathf.Clamp(RotationJ2X, J2XMin, J2XMax);
+        RotationJ2Z += valorDoSliderJ2 * velocidadeJ2 * Time.deltaTime;
+        RotationJ2Z = Mathf.Clamp(RotationJ2Z, J2Min, J2Max);
         J2.localRotation = Quaternion.Euler(RotationJ2X, RotationJ2Y, RotationJ2Z);
     }
 
@@ -112,7 +112,7 @@ public class quaternion : MonoBehaviour
     {
         valorDoSliderJ1 = sliderJ1.value;
         RotationJ1Y += valorButtonJ1Min * velocidadeJ1 * Time.deltaTime;
-        RotationJ1Y = Mathf.Clamp(RotationJ1Y, J1YMin, J1YMax);
+        RotationJ1Y = Mathf.Clamp(RotationJ1Y, J1Min, J1Max);
         J1.localRotation = Quaternion.Euler(RotationJ1X, RotationJ1Y, RotationJ1Z);
     }
 
@@ -120,7 +120,7 @@ public class quaternion : MonoBehaviour
     {
         valorDoSliderJ1 = sliderJ1.value;
         RotationJ1Y += valorButtonJ1Max * velocidadeJ1 * Time.deltaTime;
-        RotationJ1Y = Mathf.Clamp(RotationJ1Y, J1YMin, J1YMax);
+        RotationJ1Y = Mathf.Clamp(RotationJ1Y, J1Min, J1Max);
         J1.localRotation = Quaternion.Euler(RotationJ1X, RotationJ1Y, RotationJ1Z);
     }
 }
