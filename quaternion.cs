@@ -119,7 +119,7 @@ public class quaternion : MonoBehaviour
     public float valorDoSliderJ4; // valor do nosso slider!
 
     [Header("Botões J4")]
-    //botão de incrementar e decrementar.
+    //botão de incrementar e decrementar..
     public float valorButtonJ4Min = -1; //valor do botão pra ser decrementado a rotação!
     public float valorButtonJ4Max = 1; //valor do botão pra ser incrementado a rotação!
 
