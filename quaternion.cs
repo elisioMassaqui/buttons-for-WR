@@ -114,7 +114,7 @@ public class quaternion : MonoBehaviour
     public float RotationJ4Z; // progresso da nossa rotaçãoZ, ótimo pra exibir na tela, alias todo valor pode ser exibido em tempo real!
     
     [Header("Slider e valor do slider J4")]
-    //Incremento e decremento num unico slider.
+    //Incremento e decremento num unico slider..
     public Slider sliderJ4; // slider de controle de velocidade!
     public float valorDoSliderJ4; // valor do nosso slider!
 
