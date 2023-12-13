@@ -150,6 +150,9 @@ public class quaternion : MonoBehaviour
 
         sliderJ2.value = 0f;
         valorDoSliderJ2 = 0f;
+
+        sliderJ3.value = 0f;
+        valorDoSliderJ3 = 0f;
     }
 
        public void UpdateJ1Min()
