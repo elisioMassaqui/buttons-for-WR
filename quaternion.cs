@@ -8,7 +8,7 @@ public class quaternion : MonoBehaviour
 {
     public SerialPort serialPort = new SerialPort ("COM3", 9600); 
 
-    public String mensagem;
+    public string mensagem;
 
 
      #region ConfiguracoesJ1
