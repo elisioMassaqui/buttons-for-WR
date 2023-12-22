@@ -166,7 +166,7 @@ public class quaternion : MonoBehaviour
     public float J5Max; // Valor Máximo da rotaçãoZ!
     
     #endregion
-    // Start is called before the first frame update
+    // Start is called before the first frame update.
     void Start()
     {
         serialPort.Open();
