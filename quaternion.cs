@@ -6,7 +6,7 @@ using System.IO.Ports;
 
 public class quaternion : MonoBehaviour
 {
-    public SerialPort seralPort = new serialPort ("COM3", 9600); 
+    public SerialPort serialPort = new SerialPort ("COM3", 9600); 
 
 
      #region ConfiguracoesJ1
