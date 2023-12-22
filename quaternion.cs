@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO.Ports;
 
 public class quaternion : MonoBehaviour
 {
+    public SerialPort seralPort = new serialPort ("COM3", 9600); 
+
+
      #region ConfiguracoesJ1
 
      [Header("Vida J1")]
