@@ -211,7 +211,15 @@ public class quaternion : MonoBehaviour
                 mensagem = serialPort.Readline();
                 if(mensagem.Contains("botao01Pressionado"))
                 {
-                    
+                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    //Botões J1
+                    UpdateJ1Min();
+                }
+                if(mensagem.Contains("botao02Pressionado"))
+                {
+                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    //Botões J1
+                    UpdateJ1Max();
                 }
             }
             catch (System.Exception)
@@ -221,6 +229,11 @@ public class quaternion : MonoBehaviour
             }
         }
        
+    }
+
+      void OnApplicationQuit() 
+    {
+        serialPort.Close();
     }
 
     //Atualização das nossas operaçoes pra rotacionar o objecto!
