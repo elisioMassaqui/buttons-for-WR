@@ -8,6 +8,8 @@ public class quaternion : MonoBehaviour
 {
     public SerialPort serialPort = new SerialPort ("COM3", 9600); 
 
+    public String mensagem;
+
 
      #region ConfiguracoesJ1
 
@@ -167,7 +169,7 @@ public class quaternion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        serialPort.Open();
     }
 
     // Update is called once per frame
@@ -201,6 +203,23 @@ public class quaternion : MonoBehaviour
         UpdateJ3();
         UpdateJ4();
         UpdateJ5();
+
+        if (serialPort.IsOpen)
+        {
+            try
+            {
+                mensagem = serialPort.Readline();
+                if(mensagem.Contains("botao01Pressionado"))
+                {
+                    
+                }
+            }
+            catch (System.Exception)
+            {
+                
+                throw;
+            }
+        }
        
     }
 
