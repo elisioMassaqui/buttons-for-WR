@@ -6,7 +6,7 @@ using System.IO.Ports;
 
 public class quaternion : MonoBehaviour
 {
-    public SerialPort serialPort = new SerialPort ("COM3", 9600); 
+    public SerialPort serialPort = new SerialPort ("COM19", 9600); 
 
     public string mensagem;
 
@@ -204,22 +204,25 @@ public class quaternion : MonoBehaviour
         UpdateJ4();
         UpdateJ5();
 
+
         if (serialPort.IsOpen)
         {
             try
             {
-                mensagem = serialPort.Readline();
+                mensagem = serialPort.ReadLine();
                 if(mensagem.Contains("botao01Pressionado"))
                 {
                     //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
-                    //Botões J1
+                    //Botões J1.
                     UpdateJ1Min();
+                    Debug.Log("botao01Pressionado");
                 }
                 if(mensagem.Contains("botao02Pressionado"))
                 {
                     //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
                     //Botões J1
                     UpdateJ1Max();
+                     Debug.Log("botao02Pressionado");
                 }
             }
             catch (System.Exception)
