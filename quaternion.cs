@@ -13,6 +13,10 @@ public class quaternion : MonoBehaviour
 
     public bool btnJ1 = false;
     public bool btnJ2 = false;
+    public bool btnJ3 = false;
+    public bool btnJ4 = false;
+    public bool btnJ5 = false;
+
 
 
      #region ConfiguracoesJ1
