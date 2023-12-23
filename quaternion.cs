@@ -214,13 +214,13 @@ public class quaternion : MonoBehaviour
             try
             {
                 mensagem = serialPort.ReadLine();
-                    if(mensagem.Contains("botao01Pressionado") && btnJ1 == true);
+                    if(mensagem.Contains("botao01Pressionado") && btnJ1 == true)
                 {
                     //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
                     UpdateJ1Min();
                     Debug.Log("botao01Pressionado");
                 }
-                    if(mensagem.Contains("botao02Pressionado") && btnJ1 == true);
+                    if(mensagem.Contains("botao02Pressionado") && btnJ1 == true)
                 {
                     //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
                     UpdateJ1Max();
@@ -228,13 +228,13 @@ public class quaternion : MonoBehaviour
                 }
 
 
-                    if(mensagem.Contains("botao01Pressionado") && btnJ2 == true);
+                    if(mensagem.Contains("botao01Pressionado") && btnJ2 == true)
                 {
                     //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
                     UpdateJ2Min();
                     Debug.Log("botao01Pressionado");
                 }
-                    if(mensagem.Contains("botao02Pressionado") && btnJ2 == true);
+                    if(mensagem.Contains("botao02Pressionado") && btnJ2 == true)
                 {
                     //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
                     UpdateJ2Max();
