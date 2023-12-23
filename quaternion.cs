@@ -9,8 +9,10 @@ public class quaternion : MonoBehaviour
 {
     public SerialPort serialPort = new SerialPort ("COM19", 9600); 
 
+     //Carte de amor que será recebido do arduino, com certas informações, interprete cada informação do seu jeito e use ela como quiser.
     public string mensagem;
 
+     //Esses são pra especificamente confirmar qual das juntas queremos mover quando pressionamos o botão no protoboard
     public bool btnJ1 = false;
     public bool btnJ2 = false;
     public bool btnJ3 = false;
@@ -218,6 +220,9 @@ public class quaternion : MonoBehaviour
             try
             {
                 mensagem = serialPort.ReadLine();
+
+                 //Se a mensagem na carta de amor do arduino constar "botaoblalbalbla" e a booleana do botão especifico estiver ativa.
+                    //Mover J1
                     if(mensagem.Contains("botao01Pressionado") && btnJ1 == true)
                 {
                     //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
@@ -232,6 +237,7 @@ public class quaternion : MonoBehaviour
                 }
 
 
+                    //Mover J2
                     if(mensagem.Contains("botao01Pressionado") && btnJ2 == true)
                 {
                     //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
@@ -245,6 +251,8 @@ public class quaternion : MonoBehaviour
                      Debug.Log("botao02Pressionado");
                 }
 
+
+                    //Mover J3
                     if(mensagem.Contains("botao01Pressionado") && btnJ3 == true)
                 {
                     //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
@@ -258,6 +266,8 @@ public class quaternion : MonoBehaviour
                      Debug.Log("botao02Pressionado");
                 }
 
+
+                    //Mover J4
                     if(mensagem.Contains("botao01Pressionado") && btnJ4 == true)
                 {
                     //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
@@ -271,6 +281,8 @@ public class quaternion : MonoBehaviour
                      Debug.Log("botao02Pressionado");
                 }
 
+
+                    //Mover J5
                     if(mensagem.Contains("botao01Pressionado") && btnJ5 == true)
                 {
                     //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
