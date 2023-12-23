@@ -245,6 +245,46 @@ public class quaternion : MonoBehaviour
                      Debug.Log("botao02Pressionado");
                 }
 
+                    if(mensagem.Contains("botao01Pressionado") && btnJ3 == true)
+                {
+                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    UpdateJ3Min();
+                    Debug.Log("botao01Pressionado");
+                }
+                    if(mensagem.Contains("botao02Pressionado") && btnJ3 == true)
+                {
+                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    UpdateJ3Max();
+                     Debug.Log("botao02Pressionado");
+                }
+
+                    if(mensagem.Contains("botao01Pressionado") && btnJ4 == true)
+                {
+                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    UpdateJ4Min();
+                    Debug.Log("botao01Pressionado");
+                }
+                    if(mensagem.Contains("botao02Pressionado") && btnJ4 == true)
+                {
+                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    UpdateJ4Max();
+                     Debug.Log("botao02Pressionado");
+                }
+
+                    if(mensagem.Contains("botao01Pressionado") && btnJ5 == true)
+                {
+                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    UpdateJ5Min();
+                    Debug.Log("botao01Pressionado");
+                }
+                    if(mensagem.Contains("botao02Pressionado") && btnJ5 == true)
+                {
+                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    UpdateJ5Max();
+                     Debug.Log("botao02Pressionado");
+                }
+                    
+
             }
             
                 catch (System.Exception)
