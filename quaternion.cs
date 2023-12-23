@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO.Ports;
+using Unity.VisualScripting;
 
 public class quaternion : MonoBehaviour
 {
     public SerialPort serialPort = new SerialPort ("COM19", 9600); 
 
     public string mensagem;
+
+    public bool btnJ1 = false;
+    public bool btnJ2 = false;
 
 
      #region ConfiguracoesJ1
@@ -204,33 +208,50 @@ public class quaternion : MonoBehaviour
         UpdateJ4();
         UpdateJ5();
 
-
+        
         if (serialPort.IsOpen)
         {
             try
             {
                 mensagem = serialPort.ReadLine();
-                if(mensagem.Contains("botao01Pressionado"))
+                    if(mensagem.Contains("botao01Pressionado") && btnJ1 == true);
                 {
                     //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
-                    //Botões J1.
                     UpdateJ1Min();
                     Debug.Log("botao01Pressionado");
                 }
-                if(mensagem.Contains("botao02Pressionado"))
+                    if(mensagem.Contains("botao02Pressionado") && btnJ1 == true);
                 {
                     //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
-                    //Botões J1
                     UpdateJ1Max();
                      Debug.Log("botao02Pressionado");
                 }
+
+
+                    if(mensagem.Contains("botao01Pressionado") && btnJ2 == true);
+                {
+                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    UpdateJ2Min();
+                    Debug.Log("botao01Pressionado");
+                }
+                    if(mensagem.Contains("botao02Pressionado") && btnJ2 == true);
+                {
+                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    UpdateJ2Max();
+                     Debug.Log("botao02Pressionado");
+                }
+
             }
-            catch (System.Exception)
+            
+                catch (System.Exception)
             {
                 
                 throw;
             }
         }
+
+        //Loops
+  
        
     }
 
