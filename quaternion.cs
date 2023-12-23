@@ -267,7 +267,7 @@ public class quaternion : MonoBehaviour
                 }
 
 
-                    //Mover J4
+                    //Mover J4.s
                     if(mensagem.Contains("botao01Pressionado") && btnJ4 == true)
                 {
                     //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
