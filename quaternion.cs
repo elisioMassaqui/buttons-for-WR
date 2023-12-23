@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using System.IO.Ports;
 using Unity.VisualScripting;
 
@@ -11,6 +12,8 @@ public class quaternion : MonoBehaviour
 
      //Carte de amor, que será recebido do arduino, com certas informações, interprete cada informação do seu jeito e use ela como quiser.
     public string mensagem;
+    public TextMeshProUGUI messageLove;
+    public TextMeshProUGUI floatJ1;
 
      //Esses são pra especificamente confirmar qual das juntas queremos mover quando pressionamos o botão no protoboard
     public bool btnJ1 = false;
@@ -18,8 +21,6 @@ public class quaternion : MonoBehaviour
     public bool btnJ3 = false;
     public bool btnJ4 = false;
     public bool btnJ5 = false;
-
-
 
      #region ConfiguracoesJ1
 
@@ -214,6 +215,7 @@ public class quaternion : MonoBehaviour
         UpdateJ4();
         UpdateJ5();
 
+        floatJ1.text = "J1: " + RotationJ1Y;
         
         if (serialPort.IsOpen)
         {
@@ -295,7 +297,22 @@ public class quaternion : MonoBehaviour
                     UpdateJ5Max();
                      Debug.Log("botao02Pressionado");
                 }
-                    
+
+
+                //Lidando com carta de amor pra colocar e tirar da tela, metodo clãssico de limpar string pra dar um ar atualizado kkk
+                 if(mensagem.Contains("botao01Pressionado") && btnJ1 == true)
+                {
+                    messageLove.text = "Botão Negativo Pressionado";
+                }
+                    else if(mensagem.Contains("botao02Pressionado") && btnJ1 == true)
+                {
+                    messageLove.text = "Botão Positivo Pressionado";
+                }
+                else
+                {
+                    messageLove.text = "";
+                }
+  
 
             }
             
