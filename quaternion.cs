@@ -3,10 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO.Ports;
+using Unity.VisualScripting;
 
 public class quaternion : MonoBehaviour
 {
-    public SerialPort serialPort = new SerialPort ("COM3", 9600); 
+    public SerialPort serialPort = new SerialPort ("COM19", 9600); 
+
+     //Carte de amor, que será recebido do arduino, com certas informações, interprete cada informação do seu jeito e use ela como quiser.
+    public string mensagem;
+
+     //Esses são pra especificamente confirmar qual das juntas queremos mover quando pressionamos o botão no protoboard
+    public bool btnJ1 = false;
+    public bool btnJ2 = false;
+    public bool btnJ3 = false;
+    public bool btnJ4 = false;
+    public bool btnJ5 = false;
+
 
 
      #region ConfiguracoesJ1
@@ -164,10 +176,10 @@ public class quaternion : MonoBehaviour
     public float J5Max; // Valor Máximo da rotaçãoZ!
     
     #endregion
-    // Start is called before the first frame update
+    // Start is called before the first frame update.
     void Start()
     {
-        
+        serialPort.Open();
     }
 
     // Update is called once per frame
@@ -201,7 +213,107 @@ public class quaternion : MonoBehaviour
         UpdateJ3();
         UpdateJ4();
         UpdateJ5();
+
+        
+        if (serialPort.IsOpen)
+        {
+            try
+            {
+                mensagem = serialPort.ReadLine();
+
+                 //Se a mensagem na carta de amor do arduino constar "botaoblalbalbla" e a booleana do botão especifico estiver ativa.
+                    //Mover J1
+                    if(mensagem.Contains("botao01Pressionado") && btnJ1 == true)
+                {
+                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    UpdateJ1Min();
+                    Debug.Log("botao01Pressionado");
+                }
+                    if(mensagem.Contains("botao02Pressionado") && btnJ1 == true)
+                {
+                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    UpdateJ1Max();
+                     Debug.Log("botao02Pressionado");
+                }
+
+
+                    //Mover J2
+                    if(mensagem.Contains("botao01Pressionado") && btnJ2 == true)
+                {
+                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    UpdateJ2Min();
+                    Debug.Log("botao01Pressionado");
+                }
+                    if(mensagem.Contains("botao02Pressionado") && btnJ2 == true)
+                {
+                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    UpdateJ2Max();
+                     Debug.Log("botao02Pressionado");
+                }
+
+
+                    //Mover J3
+                    if(mensagem.Contains("botao01Pressionado") && btnJ3 == true)
+                {
+                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    UpdateJ3Min();
+                    Debug.Log("botao01Pressionado");
+                }
+                    if(mensagem.Contains("botao02Pressionado") && btnJ3 == true)
+                {
+                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    UpdateJ3Max();
+                     Debug.Log("botao02Pressionado");
+                }
+
+
+                    //Mover J4
+                    if(mensagem.Contains("botao01Pressionado") && btnJ4 == true)
+                {
+                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    UpdateJ4Min();
+                    Debug.Log("botao01Pressionado");
+                }
+                    if(mensagem.Contains("botao02Pressionado") && btnJ4 == true)
+                {
+                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    UpdateJ4Max();
+                     Debug.Log("botao02Pressionado");
+                }
+
+
+                    //Mover J5
+                    if(mensagem.Contains("botao01Pressionado") && btnJ5 == true)
+                {
+                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    UpdateJ5Min();
+                    Debug.Log("botao01Pressionado");
+                }
+                    if(mensagem.Contains("botao02Pressionado") && btnJ5 == true)
+                {
+                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    UpdateJ5Max();
+                     Debug.Log("botao02Pressionado");
+                }
+                    
+
+            }
+            
+                catch (System.Exception)
+            {
+                
+                throw;
+            }
+        }
+
+        //Loops
+  
        
+    }
+
+      void OnApplicationQuit() 
+    {
+        serialPort.Close();
     }
 
     //Atualização das nossas operaçoes pra rotacionar o objecto!
