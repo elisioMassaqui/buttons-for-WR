@@ -235,7 +235,6 @@ public class quaternion : MonoBehaviour
                     //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
                     UpdateJ1Min();
                     Debug.Log("botao01Pressionado");
-                    Serial.Write(mensagem2);
                 }
                     if(mensagem.Contains("botao02Pressionado") && toggleJ1.isOn)
                 {
@@ -351,6 +350,7 @@ public class quaternion : MonoBehaviour
         RotationJ1Y += valorDoSliderJ1 * velocidadeJ1 * Time.deltaTime;
         RotationJ1Y = Mathf.Clamp(RotationJ1Y, J1Min, J1Max);
         J1.localRotation = Quaternion.Euler(RotationJ1X, RotationJ1Y, RotationJ1Z);
+        Serial.Write(mensagem2);
     }
 
       public void UpdateJ2()
