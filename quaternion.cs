@@ -15,7 +15,9 @@ public class quaternion : MonoBehaviour
     public TextMeshProUGUI messageLove;
     public TextMeshProUGUI anguloJ1;
 
-     //Esses são pra especificamente confirmar qual das juntas queremos mover quando pressionamos o botão no protoboard
+    public Toggle[] toggleJuntas;
+
+     //Esses são pra especificamente confirmar qual das juntas queremos mover quando pressionamos o botão no protoboard.
     public bool btnJ1 = false;
     public bool btnJ2 = false;
     public bool btnJ3 = false;
