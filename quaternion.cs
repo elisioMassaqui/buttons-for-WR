@@ -215,7 +215,7 @@ public class quaternion : MonoBehaviour
         UpdateJ4();
         UpdateJ5();
 
-         anguloJ1.text = "Angulo Da Junta Atual Eixo Y: " + RotationJ1Y;
+         anguloJ1.text = "Angulo: J1.Y: " + RotationJ1Y;
 
 
         if (serialPort.IsOpen)
