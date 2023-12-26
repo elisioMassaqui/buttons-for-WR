@@ -10,19 +10,21 @@ public class quaternion : MonoBehaviour
 {
     public SerialPort serialPort = new SerialPort ("COM19", 9600); 
 
+      [Header("Serial Unity-Arduino")]
      //...Carte de amor, que será recebido do arduino, com certas informações, interprete cada informação do seu jeito e use ela como quiser.
     public string mensagem;
-    public TextMeshProUGUI messageLove;
-    public TextMeshProUGUI anguloJ1;
+    public TextMeshProUGUI messageLove;  //Botão a ser pressionado
+    public TextMeshProUGUI anguloJ1;  //Mostrar o angulo da junta a ser movida, em tempo real na tela.
 
     //O toggle é o componente da UI que funciona como bool.
+     [Header("Ativar e Desativar Botões Da Protoboard")]
     public Toggle toggleJ1;
     public Toggle toggleJ2;
     public Toggle toggleJ3;
     public Toggle toggleJ4;
     public Toggle toggleJ5;
 
-
+     [Header("======Vida das Juntas======")]
      #region ConfiguracoesJ1
 
      [Header("Vida J1")]
