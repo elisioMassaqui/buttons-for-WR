@@ -10,7 +10,7 @@ public class quaternion : MonoBehaviour
 {
     public SerialPort serialPort = new SerialPort ("COM19", 9600); 
 
-     //Carte de amor, que será recebido do arduino, com certas informações, interprete cada informação do seu jeito e use ela como quiser.
+     //.Carte de amor, que será recebido do arduino, com certas informações, interprete cada informação do seu jeito e use ela como quiser.
     public string mensagem;
     public TextMeshProUGUI messageLove;
     public TextMeshProUGUI anguloJ1;
