@@ -232,7 +232,7 @@ public class quaternion : MonoBehaviour
 
                  //Se a mensagem na carta de amor do arduino constar "botaoblalbalbla" e a booleana do botão especifico estiver ativa.
                     //Mover J1
-                    if(mensagem.Contains("botao01Pressionado") && btnJ1 == true)
+                    if(mensagem.Contains("botao01Pressionado") && toggleJ1.isOn)
                 {
                     //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
                     UpdateJ1Min();
