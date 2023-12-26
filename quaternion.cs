@@ -22,6 +22,9 @@ public class quaternion : MonoBehaviour
     public bool btnJ4 = false;
     public bool btnJ5 = false;
 
+    public bool[] bools = new bool[5];
+    public int currentIndex = 0;
+
      #region ConfiguracoesJ1
 
      [Header("Vida J1")]
@@ -215,7 +218,7 @@ public class quaternion : MonoBehaviour
         UpdateJ4();
         UpdateJ5();
 
-         anguloJ1.text = "Angulo Da Junta Atual Eixo Y: " + RotationJ1Y;
+         anguloJ1.text = "Angulo: J1.Y: " + RotationJ1Y;
 
 
         if (serialPort.IsOpen)
