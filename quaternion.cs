@@ -301,11 +301,11 @@ public class quaternion : MonoBehaviour
 
 
                 //Lidando com carta de amor pra colocar e tirar da tela, metodo clãssico de limpar string pra dar um ar atualizado kkk
-                 if(mensagem.Contains("botao01Pressionado") && btnJ1 == true)
+                 if(mensagem.Contains("botao01Pressionado") && toggleJ1.isOn)
                 {
                     messageLove.text = "Botão Negativo Pressionado";
                 }
-                    else if(mensagem.Contains("botao02Pressionado") && btnJ1 == true)
+                    else if(mensagem.Contains("botao02Pressionado") && toggleJ1.isOn)
                 {
                     messageLove.text = "Botão Positivo Pressionado";
                 }
