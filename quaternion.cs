@@ -21,13 +21,6 @@ public class quaternion : MonoBehaviour
     public Toggle toggleJ4;
     public Toggle toggleJ5;
 
-     //.Esses são pra especificamente confirmar qual das juntas queremos mover quando pressionamos o botão no protoboard.
-    public bool btnJ1 = false;
-    public bool btnJ2 = false;
-    public bool btnJ3 = false;
-    public bool btnJ4 = false;
-    public bool btnJ5 = false;
-
      #region ConfiguracoesJ1
 
      [Header("Vida J1")]
@@ -240,7 +233,7 @@ public class quaternion : MonoBehaviour
                 }
                     if(mensagem.Contains("botao02Pressionado") && btnJ1 == true)
                 {
-                    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+                    //.Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
                     UpdateJ1Max();
                      Debug.Log("botao02Pressionado");
                 }
