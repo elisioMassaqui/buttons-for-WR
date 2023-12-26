@@ -1,4 +1,3 @@
-
 int led = 13;
 int x = 0;
 
@@ -38,6 +37,10 @@ void loop() {
     //Muito importante pra não enviar as strings anteriores continuamente, e o programa poder rodar independentemente, oque evita o programa não colar no inicio a espera do input pra receber a string que quer nesse caso distraimo ele com outra garota, pra não pensar muito kkkk
     Serial.println("botõesNãoPressionados");
   }
+
+
+
+
 
 
   /*
