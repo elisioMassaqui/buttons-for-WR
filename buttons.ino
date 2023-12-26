@@ -9,7 +9,7 @@ int button1 = 8;
 int sinal_button1 = 0;
 
 void setup() {
-  // put your setup code here, to run once:
+  // put your setup code here, to run once:.
   Serial.begin(9600); // Inicia a comunicação serial.
 
   pinMode(led, OUTPUT);
