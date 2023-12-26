@@ -17,7 +17,7 @@ public class quaternion : MonoBehaviour
 
     public Toggle[] toggleJuntas;
 
-     //Esses são pra especificamente confirmar qual das juntas queremos mover quando pressionamos o botão no protoboard.
+     //.Esses são pra especificamente confirmar qual das juntas queremos mover quando pressionamos o botão no protoboard.
     public bool btnJ1 = false;
     public bool btnJ2 = false;
     public bool btnJ3 = false;
