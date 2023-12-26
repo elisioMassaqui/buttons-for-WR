@@ -13,7 +13,7 @@ public class quaternion : MonoBehaviour
      //Carte de amor, que será recebido do arduino, com certas informações, interprete cada informação do seu jeito e use ela como quiser.
     public string mensagem;
     public TextMeshProUGUI messageLove;
-    public TextMeshProUGUI floatJ1;
+    public TextMeshProUGUI anguloJunta;
 
      //Esses são pra especificamente confirmar qual das juntas queremos mover quando pressionamos o botão no protoboard
     public bool btnJ1 = false;
@@ -215,7 +215,6 @@ public class quaternion : MonoBehaviour
         UpdateJ4();
         UpdateJ5();
 
-        floatJ1.text = "J1: " + RotationJ1Y;
         
         if (serialPort.IsOpen)
         {
@@ -230,6 +229,7 @@ public class quaternion : MonoBehaviour
                     //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
                     UpdateJ1Min();
                     Debug.Log("botao01Pressionado");
+                    anguloJunta.text = "Angulo Da Junta Atual: " + RotationJ1Y;
                 }
                     if(mensagem.Contains("botao02Pressionado") && btnJ1 == true)
                 {
