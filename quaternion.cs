@@ -13,7 +13,7 @@ public class quaternion : MonoBehaviour
       [Header("Serial Unity-Arduino")]
      //...Carte de amor, que será recebido do arduino, com certas informações, interprete cada informação do seu jeito e use ela como quiser.
     public string mensagem;
-    public string mensagem2;
+    public string mensagem2 = "updatesliderj1";
     public TextMeshProUGUI messageLove;  //Botão a ser pressionado
     public TextMeshProUGUI anguloJ1;  //Mostrar o angulo da junta a ser movida, em tempo real na tela.
 
