@@ -15,6 +15,7 @@ public class quaternion : MonoBehaviour
     public TextMeshProUGUI messageLove;
     public TextMeshProUGUI anguloJ1;
 
+    //O toggle é o componente da UI que funciona como bool.
     public Toggle toggleJ1;
     public Toggle toggleJ2;
     public Toggle toggleJ3;
