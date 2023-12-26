@@ -22,8 +22,8 @@ public class quaternion : MonoBehaviour
     public bool btnJ4 = false;
     public bool btnJ5 = false;
 
-    private bool[] bools = new bool[5];
-    private int currentIndex = 0;
+    public bool[] bools = new bool[5];
+    public int currentIndex = 0;
 
      #region ConfiguracoesJ1
 
