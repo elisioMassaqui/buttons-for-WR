@@ -11,9 +11,9 @@ public class quaternion : MonoBehaviour
     public SerialPort serialPort = new SerialPort ("COM19", 9600); 
 
       [Header("Serial Unity-Arduino")]
-     //...Carte de amor, que será recebido do arduino, com certas informações, interprete cada informação do seu jeito e use ela como quiser.
+     //...Carte de amor, que será recebido do arduino,, com certas informações, interprete cada informação do seu jeito e use ela como quiser.
     public string mensagem;
-    public string mensagem2 = "updatesliderj1";
+    public string mensagem2 = "1";
     public TextMeshProUGUI messageLove;  //Botão a ser pressionado
     public TextMeshProUGUI anguloJ1;  //Mostrar o angulo da junta a ser movida, em tempo real na tela.
 
@@ -218,8 +218,10 @@ public class quaternion : MonoBehaviour
         UpdateJ3();
         UpdateJ4();
         UpdateJ5();
-
          anguloJ1.text = "Angulo: J1.Y: " + RotationJ1Y;
+
+ 
+             serialPort.Write("1");
 
 
         if (serialPort.IsOpen)
@@ -350,7 +352,6 @@ public class quaternion : MonoBehaviour
         RotationJ1Y += valorDoSliderJ1 * velocidadeJ1 * Time.deltaTime;
         RotationJ1Y = Mathf.Clamp(RotationJ1Y, J1Min, J1Max);
         J1.localRotation = Quaternion.Euler(RotationJ1X, RotationJ1Y, RotationJ1Z);
-        Serial.Write(mensagem2);
     }
 
       public void UpdateJ2()
