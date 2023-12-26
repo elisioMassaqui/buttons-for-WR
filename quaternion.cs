@@ -229,7 +229,7 @@ public class quaternion : MonoBehaviour
                     //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
                     UpdateJ1Min();
                     Debug.Log("botao01Pressionado");
-                    anguloJunta.text = "Angulo Da Junta Atual: " + RotationJ1Y;
+                    mostrarAngulo();
                 }
                     if(mensagem.Contains("botao02Pressionado") && btnJ1 == true)
                 {
@@ -488,6 +488,11 @@ public class quaternion : MonoBehaviour
         RotationJ5Z += valorButtonJ5Max * velocidadeJ5 * Time.deltaTime;
         RotationJ5Z = Mathf.Clamp(RotationJ5Z, J5Min, J5Max);
         J5.localRotation = Quaternion.Euler(RotationJ5X, RotationJ5Y, RotationJ5Z);
+    }
+
+    void mostrarAngulo()
+    {
+        anguloJunta.text = "Angulo Da Junta Atual: " + RotationJ1Y;
     }
 
 }
