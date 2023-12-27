@@ -247,6 +247,11 @@ public class quaternion : MonoBehaviour
 
 
         anguloJ1.text = "Angulo: J1.Y: " + RotationJ1Y;
+        anguloJ2.text = "Angulo: J2.Z: " + RotationJ2Z;
+        anguloJ3.text = "Angulo: J3.Z: " + RotationJ3Z;
+        anguloJ4.text = "Angulo: J4.Y: " + RotationJ4Y;
+        anguloJ5.text = "Angulo: J5.Y: " + RotationJ5Z;
+
 
         portaArduino = inputArduinoPorta.text;
 
