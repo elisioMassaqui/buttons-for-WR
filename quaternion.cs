@@ -221,13 +221,24 @@ public class quaternion : MonoBehaviour
         UpdateJ4();
         UpdateJ5();
 
-        if (mensagem.Contains("botao01Pressionado"))
+
+        //Pra receber automatação dos metodos da unity e exeutar os metodos
+        if (mensagem.Contains("FORJ1MIN"))
         {
             UpdateJ1Min();
         }
-        else if(mensagem.Contains("botao02Pressionado")){
+        else if(mensagem.Contains("FORJ1MAX")){
             UpdateJ1Max();
         }
+
+        if (mensagem.Contains("FORJ2MIN"))
+        {
+            UpdateJ2Min();
+        }
+        else if(mensagem.Contains("FORJ2MAX")){
+            UpdateJ2Max();
+        }
+
 
         anguloJ1.text = "Angulo: J1.Y: " + RotationJ1Y;
 
