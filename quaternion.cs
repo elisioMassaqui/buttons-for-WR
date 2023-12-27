@@ -199,7 +199,6 @@ public class quaternion : MonoBehaviour
     void Update()
     {
         //VALORES MAXIMOS MINIMOS DOS SLIDERS NA UI DE CADA JUNTA, ESSE VALOR É DO MOVIMENTO * VELCOCIDADE.
-
         sliderJ1.minValue = -1;
         sliderJ1.maxValue = 1;
 
@@ -215,12 +214,14 @@ public class quaternion : MonoBehaviour
         sliderJ5.minValue = -1;
         sliderJ5.maxValue = 1;
 
+        //Sliders de velociadade na UI.
         velocidadeJ1 = sliderVelocityJ1.value;
         velocidadeJ2 = sliderVelocityJ2.value;
         velocidadeJ3 = sliderVelocityJ3.value;
         velocidadeJ4 = sliderVelocityJ4.value;
         velocidadeJ5 = sliderVelocityJ5.value;
 
+        //Atualizar os metodos que serão usados pelo SliderController.
         UpdateJ1();
         UpdateJ2();
         UpdateJ3();
