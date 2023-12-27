@@ -8,6 +8,7 @@ using Unity.VisualScripting;
 
 public class quaternion : MonoBehaviour
 {
+
     public SerialPort serialPort = new SerialPort ("COM19", 9600); 
 
       [Header("Serial Unity-Arduino")]
@@ -323,6 +324,19 @@ public class quaternion : MonoBehaviour
             }
             
                 catch (System.Exception)
+            {
+                
+                throw;
+            }
+        }
+
+        //Enviar Carta de amor.
+         if(serialPort.IsOpen){
+            try
+            {
+                serialPort.Write("A");
+            }
+            catch (System.Exception)
             {
                 
                 throw;
