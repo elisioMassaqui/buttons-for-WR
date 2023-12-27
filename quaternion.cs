@@ -228,7 +228,7 @@ public class quaternion : MonoBehaviour
         UpdateJ5();
 
 
-        //Pra receber automatação dos loops do arduino e exeutar os metodos
+        //Pra receber automatação dos loops do arduino e exeutar os metodos na unity.
         if (mensagem.Contains("FORJ1MIN"))
         {
             UpdateJ1Min();
@@ -245,7 +245,7 @@ public class quaternion : MonoBehaviour
             UpdateJ2Max();
         }
 
-
+        //o texto do angulo J da UI vai receber a string concatenada com o progresso do seu angulo.
         anguloJ1.text = "Angulo J1.Y: " + RotationJ1Y;
         anguloJ2.text = "Angulo J2.Z: " + RotationJ2Z;
         anguloJ3.text = "Angulo J3.Z: " + RotationJ3Z;
@@ -259,6 +259,8 @@ public class quaternion : MonoBehaviour
         {
             try
             {
+
+                //Receber carta de amor do arduino.
                 mensagem = serialPort.ReadLine();
                  //Se a mensagem na carta de amor do arduino constar "botaoblalbalbla" e a booleana do botão especifico estiver ativa.
                     //Mover J1
