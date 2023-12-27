@@ -13,10 +13,11 @@ public class quaternion : MonoBehaviour
       [Header("Serial Unity-Arduino")]
      //...Carte de amor, que será recebido do arduino,, com certas informações, interprete cada informação do seu jeito e use ela como quiser.
     public string mensagem;
-    public string mensagem2 = "1";
     public TextMeshProUGUI messageLove;  //Botão a ser pressionado
     public TextMeshProUGUI anguloJ1;  //Mostrar o angulo da junta a ser movida, em tempo real na tela.
-
+    
+    public string portaArduino;
+    public TextMeshProUGUI inputArduinoPorta;
     //O toggle é o componente da UI que funciona como bool.
      [Header("Ativar e Desativar Botões Da Protoboard")]
     public Toggle toggleJ1;
@@ -218,18 +219,16 @@ public class quaternion : MonoBehaviour
         UpdateJ3();
         UpdateJ4();
         UpdateJ5();
-         anguloJ1.text = "Angulo: J1.Y: " + RotationJ1Y;
 
- 
-             serialPort.Write("1");
+        anguloJ1.text = "Angulo: J1.Y: " + RotationJ1Y;
 
+        portaArduino = inputArduinoPorta.text;
 
         if (serialPort.IsOpen)
         {
             try
             {
                 mensagem = serialPort.ReadLine();
-
                  //Se a mensagem na carta de amor do arduino constar "botaoblalbalbla" e a booleana do botão especifico estiver ativa.
                     //Mover J1
                     if(mensagem.Contains("botao01Pressionado") && toggleJ1.isOn)
