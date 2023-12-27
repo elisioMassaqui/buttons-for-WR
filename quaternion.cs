@@ -23,8 +23,10 @@ public class quaternion : MonoBehaviour
     public TextMeshProUGUI anguloJ4;
     public TextMeshProUGUI anguloJ5;
 
+    [Header("Pra Usuário Definir a porta ou tipo de Arduino.")]
     public string portaArduino;
     public TextMeshProUGUI inputArduinoPorta;
+
     //O toggle é o componente da UI que funciona como bool.
      [Header("Ativar e Desativar Botões Da Protoboard")]
     public Toggle toggleJ1;
