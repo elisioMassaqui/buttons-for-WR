@@ -16,16 +16,16 @@ public class quaternion : MonoBehaviour
     public string mensagem;
     public TextMeshProUGUI messageLove;  //Botão a ser pressionado
 
+    [Header("Pra Usuário Definir A Porta Ou Tipo De Arduino.")]
+    public string portaArduino;
+    public TextMeshProUGUI inputArduinoPorta;
+
      [Header("Angulos das Juntas Na UI")]
     public TextMeshProUGUI anguloJ1;  //Mostrar o angulo da junta a ser movida, em tempo real na tela.
     public TextMeshProUGUI anguloJ2;
     public TextMeshProUGUI anguloJ3;
     public TextMeshProUGUI anguloJ4;
     public TextMeshProUGUI anguloJ5;
-
-    [Header("Pra Usuário Definir A Porta Ou Tipo De Arduino.")]
-    public string portaArduino;
-    public TextMeshProUGUI inputArduinoPorta;
 
     //O toggle é o componente da UI que funciona como bool.
      [Header("Ativar e Desativar Botões Da Protoboard")]
@@ -35,7 +35,7 @@ public class quaternion : MonoBehaviour
     public Toggle toggleJ4;
     public Toggle toggleJ5;
 
-     [Header("======Vida das Juntas======")]
+     [Header("=============Vida das Juntas=============")]
      #region ConfiguracoesJ1
 
      [Header("Vida J1")]
