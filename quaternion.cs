@@ -23,7 +23,7 @@ public class quaternion : MonoBehaviour
     public TextMeshProUGUI anguloJ4;
     public TextMeshProUGUI anguloJ5;
 
-    [Header("Pra Usuário Definir a porta ou tipo de Arduino.")]
+    [Header("Pra Usuário Definir A Porta Ou Tipo De Arduino.")]
     public string portaArduino;
     public TextMeshProUGUI inputArduinoPorta;
 
