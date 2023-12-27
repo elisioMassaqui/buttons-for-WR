@@ -222,7 +222,7 @@ public class quaternion : MonoBehaviour
         UpdateJ5();
 
 
-        //Pra receber automatação dos metodos da unity e exeutar os metodos
+        //Pra receber automatação dos loops do arduino e exeutar os metodos
         if (mensagem.Contains("FORJ1MIN"))
         {
             UpdateJ1Min();
