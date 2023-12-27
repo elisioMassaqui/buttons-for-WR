@@ -391,7 +391,9 @@ public class quaternion : MonoBehaviour
   
        
     }
+    
 
+        //Se sair do programa fecha a porta.
       void OnApplicationQuit() 
     {
         serialPort.Close();
