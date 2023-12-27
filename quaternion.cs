@@ -221,6 +221,14 @@ public class quaternion : MonoBehaviour
         UpdateJ4();
         UpdateJ5();
 
+        if (mensagem.Contains("botao01Pressionado"))
+        {
+            UpdateJ1Min();
+        }
+        else if(mensagem.Contains("botao02Pressionado")){
+            UpdateJ1Max();
+        }
+
         anguloJ1.text = "Angulo: J1.Y: " + RotationJ1Y;
 
         portaArduino = inputArduinoPorta.text;
@@ -331,10 +339,22 @@ public class quaternion : MonoBehaviour
         }
 
         //Enviar Carta de amor.
-         if(serialPort.IsOpen){
+         if(serialPort.IsOpen && RotationJ1Y < 0){
             try
             {
                 serialPort.Write("A");
+            }
+            catch (System.Exception)
+            {
+                
+                throw;
+            }
+        }
+        else if (serialPort.IsOpen && RotationJ1Y > 0)
+        {
+             try
+            {
+                serialPort.Write("B");
             }
             catch (System.Exception)
             {
