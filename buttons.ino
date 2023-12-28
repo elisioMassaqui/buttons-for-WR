@@ -53,7 +53,7 @@ void loop() {
     }
   }
 
-
+       //  os loops é pra automatizar funções da unity fazendo certas partes do robo se mexer sozinho.
     /*
      for(int vezes = 0; vezes < 50; vezes++){
 
