@@ -35,30 +35,72 @@ void loop() {
    else {
     digitalWrite(led, LOW);
     //Muito importante pra não enviar as strings anteriores continuamente, e o programa poder rodar independentemente, oque evita o programa não colar no inicio a espera do input pra receber a string que quer nesse caso distraimo ele com outra garota, pra não pensar muito kkkk
-    Serial.println("botõesNãoPressionados");
+    Serial.println("botoesNaoPressionados");
+  }
+
+ if (Serial.available() > 0) {
+    char comando = Serial.read();  // Lê o comando da porta serial
+
+    // Verifica o comando recebido e executa a ação correspondente
+    switch (comando) {
+      case 'A':
+        piscarLedA();  // Chama a função para piscar o LED
+        break;
+      case 'B':
+        piscarLedB();
+        break;
+      // Adicione mais casos para outros comandos, se necessário
+    }
   }
 
 
+    /*
+     for(int vezes = 0; vezes < 50; vezes++){
 
-
-
-
-  /*
-     for(int vezes = 0; vezes < 10; vezes++){
+      Serial.println("FORJ1MIN");
       digitalWrite(led, HIGH);
-      delay(200);
+      delay(10);
+
       digitalWrite(led, LOW);
-      delay(200);
+      delay(10);
+      
      }
 
-     for(int vezes = 0; vezes < 5; vezes++){
+     for(int vezes = 0; vezes < 50; vezes++){
+
+      Serial.println("FORJ1MAX");
       digitalWrite(led, HIGH);
-      delay(1000);
+      delay(10);
+
       digitalWrite(led, LOW);
-      delay(1000);
+      delay(10);
      }
 
-     while(x < 200){
+          for(int vezes = 0; vezes < 50; vezes++){
+
+      Serial.println("FORJ2MIN");
+      digitalWrite(led, HIGH);
+      delay(10);
+
+      digitalWrite(led, LOW);
+      delay(10);
+      
+     }
+
+     for(int vezes = 0; vezes < 50; vezes++){
+
+      Serial.println("FORJ2MAX");
+      digitalWrite(led, HIGH);
+      delay(10);
+
+      digitalWrite(led, LOW);
+      delay(10);
+     }
+      */
+
+
+      /*
+     while(x < 10){
       digitalWrite(led, HIGH);
       delay(200);
       digitalWrite(led, LOW);
@@ -66,5 +108,19 @@ void loop() {
 
           x += 1;
      }
+
      */
+
+}
+
+void piscarLedA() {
+  digitalWrite(led, HIGH);  // Liga o LED
+  delay(10);  // Aguarda 500 milissegundos
+  digitalWrite(led, LOW);   // Desliga o LED
+}
+
+void piscarLedB() {
+  digitalWrite(led, HIGH);  // Liga o LED
+  delay(3);  // Aguarda 500 milissegundos
+  digitalWrite(led, LOW);   // Desliga o LED
 }
