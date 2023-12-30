@@ -34,6 +34,7 @@ public class quaternion : MonoBehaviour
     public Toggle toggleJ3;
     public Toggle toggleJ4;
     public Toggle toggleJ5;
+    public Toggle iniciarToggle;
 
      [Header("=============Vida das Juntas=============")]
      #region ConfiguracoesJ1
@@ -230,6 +231,18 @@ public class quaternion : MonoBehaviour
         UpdateJ4();
         UpdateJ5();
 
+        if (iniciarToggle.isOn)
+        {
+            if (toggleJ1.isOn)
+            {
+                   StartCoroutine(updatingJ1Min());  
+            }
+            else if (toggleJ2.isOn)
+            {
+
+                 StartCoroutine(updatingJ1Max());   
+            }
+        }
 
         //Pra receber automatação dos loops do arduino e exeutar os metodos na unity.
         if (mensagem.Contains("FORJ1MIN"))
@@ -558,5 +571,21 @@ public class quaternion : MonoBehaviour
         RotationJ5Z = Mathf.Clamp(RotationJ5Z, J5Min, J5Max);
         J5.localRotation = Quaternion.Euler(RotationJ5X, RotationJ5Y, RotationJ5Z);
     }
+
+            IEnumerator updatingJ1Min()
+        {
+            //Logica da sua função
+            yield return new WaitForSeconds(3f);
+            //Mais Logica da sua função
+             UpdateJ1Min(); 
+        }
+
+                IEnumerator updatingJ1Max()
+        {
+            //Logica da sua função
+            yield return new WaitForSeconds(6f);
+            //Mais Logica da sua função
+             UpdateJ1Max();
+        }
 
 }
