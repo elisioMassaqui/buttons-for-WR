@@ -234,15 +234,9 @@ public class quaternion : MonoBehaviour
 
         if (iniciarToggle.isOn)
         {
-            if (toggleJ1.isOn)
+            if (toggleJ1.isOn && toggleJ2.isOn)
             {
-                InvokeRepeating("UpdateJ1Min", 1f, 4f); 
-            }
-
-            if (toggleJ2.isOn)
-            {
-                
-                InvokeRepeating("UpdateJ1Max", 3f, 6f);
+                   updatingJ1(); 
             }
         }
 
@@ -573,5 +567,22 @@ public class quaternion : MonoBehaviour
         RotationJ5Z = Mathf.Clamp(RotationJ5Z, J5Min, J5Max);
         J5.localRotation = Quaternion.Euler(RotationJ5X, RotationJ5Y, RotationJ5Z);
     }
+
+        public void updatingJ1()
+        {
+
+            for (int i = 0; i < 50; i++)
+            {
+                UpdateJ1Min(); 
+                Debug.Log("J1MIN");
+            }
+
+            for (int i = 0; i < 30; i++)
+            {
+                UpdateJ1Max(); 
+                Debug.Log("J1MAX");
+            }
+
+        }
 
 }
