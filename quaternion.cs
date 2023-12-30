@@ -237,7 +237,8 @@ public class quaternion : MonoBehaviour
             {
                    StartCoroutine(updatingJ1Min());  
             }
-            else if (toggleJ2.isOn)
+
+            if (toggleJ2.isOn)
             {
 
                  StartCoroutine(updatingJ1Max());   
@@ -575,15 +576,15 @@ public class quaternion : MonoBehaviour
             IEnumerator updatingJ1Min()
         {
             //Logica da sua função
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(1f);
             //Mais Logica da sua função
              UpdateJ1Min(); 
         }
 
-                IEnumerator updatingJ1Max()
+            IEnumerator updatingJ1Max()
         {
             //Logica da sua função
-            yield return new WaitForSeconds(6f);
+            yield return new WaitForSeconds(10f);
             //Mais Logica da sua função
              UpdateJ1Max();
         }
