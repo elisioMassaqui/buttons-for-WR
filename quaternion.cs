@@ -215,7 +215,7 @@ public class quaternion : MonoBehaviour
                 Debug.Log("J1MAX");
             }
 
-            
+
         //VALORES MAXIMOS MINIMOS DOS SLIDERS NA UI DE CADA JUNTA, ESSE VALOR É DO MOVIMENTO * VELCOCIDADE.
         sliderJ1.minValue = -1;
         sliderJ1.maxValue = 1;
@@ -582,10 +582,6 @@ public class quaternion : MonoBehaviour
         J5.localRotation = Quaternion.Euler(RotationJ5X, RotationJ5Y, RotationJ5Z);
     }
 
-        public void updatingJ1()
-        {
-
-
-        }
+      
 
 }
