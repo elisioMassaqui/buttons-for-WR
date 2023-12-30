@@ -35,6 +35,7 @@ public class quaternion : MonoBehaviour
     public Toggle toggleJ4;
     public Toggle toggleJ5;
     public Toggle iniciarToggle;
+    public float bazar = 5f;
 
      [Header("=============Vida das Juntas=============")]
      #region ConfiguracoesJ1
@@ -235,13 +236,13 @@ public class quaternion : MonoBehaviour
         {
             if (toggleJ1.isOn)
             {
-                   StartCoroutine(updatingJ1Min());  
+                InvokeRepeating("UpdateJ1Min", 1f, 4f); 
             }
 
             if (toggleJ2.isOn)
             {
-
-                 StartCoroutine(updatingJ1Max());   
+                
+                InvokeRepeating("UpdateJ1Max", 3f, 6f);
             }
         }
 
@@ -521,7 +522,7 @@ public class quaternion : MonoBehaviour
 
 
         //Botões J3
-            public void UpdateJ3Min()
+        public void UpdateJ3Min()
     {
         valorDoSliderJ3 = sliderJ3.value;
         RotationJ3Z += valorButtonJ3Min * velocidadeJ3 * Time.deltaTime;
@@ -539,7 +540,7 @@ public class quaternion : MonoBehaviour
 
 
         //Botões J4
-            public void UpdateJ4Min()
+        public void UpdateJ4Min()
     {
         valorDoSliderJ4 = sliderJ4.value;
         RotationJ4Y += valorButtonJ4Min * velocidadeJ4 * Time.deltaTime;
@@ -557,7 +558,7 @@ public class quaternion : MonoBehaviour
 
 
         //Botões J5
-            public void UpdateJ5Min()
+        public void UpdateJ5Min()
     {
         valorDoSliderJ5 = sliderJ5.value;
         RotationJ5Z += valorButtonJ5Min * velocidadeJ5 * Time.deltaTime;
@@ -572,21 +573,5 @@ public class quaternion : MonoBehaviour
         RotationJ5Z = Mathf.Clamp(RotationJ5Z, J5Min, J5Max);
         J5.localRotation = Quaternion.Euler(RotationJ5X, RotationJ5Y, RotationJ5Z);
     }
-
-            IEnumerator updatingJ1Min()
-        {
-            //Logica da sua função
-            yield return new WaitForSeconds(1f);
-            //Mais Logica da sua função
-             UpdateJ1Min(); 
-        }
-
-            IEnumerator updatingJ1Max()
-        {
-            //Logica da sua função
-            yield return new WaitForSeconds(10f);
-            //Mais Logica da sua função
-             UpdateJ1Max();
-        }
 
 }
