@@ -577,7 +577,7 @@ public class quaternion : MonoBehaviour
                 Debug.Log("J1MIN");
             }
 
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 50; i++)
             {
                 UpdateJ1Max(); 
                 Debug.Log("J1MAX");
