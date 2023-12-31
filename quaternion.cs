@@ -37,6 +37,8 @@ public class quaternion : MonoBehaviour
     public Toggle iniciarToggle;
     public float bazar = 5f;
 
+    public GameObject Painel;
+
      [Header("=============Vida das Juntas=============")]
      #region ConfiguracoesJ1
 
