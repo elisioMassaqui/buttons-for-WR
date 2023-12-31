@@ -370,7 +370,7 @@ public class quaternion : MonoBehaviour
             }
         }
 
-        //Enviar Carta de amor.
+        //Enviar Carta de amor pra arduino.
          if(serialPort.IsOpen && RotationJ1Y < 0){
             try
             {
