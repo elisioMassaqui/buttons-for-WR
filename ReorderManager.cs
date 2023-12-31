@@ -10,6 +10,9 @@ public class ReorderManager : MonoBehaviour
     // Lista de botões associados aos elementos
     public List<Toggle> botoes;
 
+    // Text para exibir a nova ordem
+    public Text textoOrdem;
+
     void Update(){
         AtualizarOrdem();
     }
@@ -33,5 +36,8 @@ public class ReorderManager : MonoBehaviour
 
         // Exibe a nova ordem (isso pode ser ajustado conforme necessário)
         Debug.Log("Nova Ordem: " + string.Join(", ", novaOrdem));
+
+         // Atualiza o Text com a nova ordem
+        textoOrdem.text = "Nova Ordem: " + string.Join(", ", novaOrdem);tex
     }
 }
