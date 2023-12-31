@@ -10,6 +10,10 @@ public class ReorderManager : MonoBehaviour
     // Lista de botões associados aos elementos
     public List<Toggle> botoes;
 
+    void Update(){
+        AtualizarOrdem();
+    }
+
     // Atualiza a ordem quando os botões são marcados ou desmarcados
     public void AtualizarOrdem()
     {
