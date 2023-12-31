@@ -203,19 +203,6 @@ public class quaternion : MonoBehaviour
     void Update()
     {
 
-            for (int i = 0; i < 50; i++)
-            {
-                UpdateJ1Min(); 
-                Debug.Log("J1MIN");
-            }
-
-            for (int i = 0; i < 50; i++)
-            {
-                UpdateJ1Max(); 
-                Debug.Log("J1MAX");
-            }
-
-
         //VALORES MAXIMOS MINIMOS DOS SLIDERS NA UI DE CADA JUNTA, ESSE VALOR É DO MOVIMENTO * VELCOCIDADE.
         sliderJ1.minValue = -1;
         sliderJ1.maxValue = 1;
@@ -246,13 +233,6 @@ public class quaternion : MonoBehaviour
         UpdateJ4();
         UpdateJ5();
 
-        if (iniciarToggle.isOn)
-        {
-            if (toggleJ1.isOn && toggleJ2.isOn)
-            {
-                   updatingJ1(); 
-            }
-        }
 
         //Pra receber automatação dos loops do arduino e exeutar os metodos na unity.
         if (mensagem.Contains("FORJ1MIN"))
@@ -581,7 +561,5 @@ public class quaternion : MonoBehaviour
         RotationJ5Z = Mathf.Clamp(RotationJ5Z, J5Min, J5Max);
         J5.localRotation = Quaternion.Euler(RotationJ5X, RotationJ5Y, RotationJ5Z);
     }
-
-      
 
 }
