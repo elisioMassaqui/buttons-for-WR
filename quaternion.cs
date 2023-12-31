@@ -233,11 +233,6 @@ public class quaternion : MonoBehaviour
         UpdateJ4();
         UpdateJ5();
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            serialPort.Write("A");
-        }
-
         /*/Pra receber automatação dos loops do arduino e exeutar os metodos na unity.
         if (mensagem.Contains("FORJ1MIN"))
         {
