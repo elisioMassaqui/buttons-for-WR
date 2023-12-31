@@ -201,6 +201,10 @@ public class quaternion : MonoBehaviour
         serialPort.Open();
     }
 
+       void vambazar(){
+         Debug.Log("YieldNot");
+       }
+
     // Update is called once per frame
     void Update()
     {
