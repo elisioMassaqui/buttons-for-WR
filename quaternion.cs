@@ -372,11 +372,11 @@ public class quaternion : MonoBehaviour
         */
 
         //o texto do angulo J da UI vai receber a string concatenada com o progresso do seu angulo.
-        anguloJ1.text = "Angulo J1.Y: " + RotationJ1Y;
-        anguloJ2.text = "Angulo J2.Z: " + RotationJ2Z;
-        anguloJ3.text = "Angulo J3.Z: " + RotationJ3Z;
-        anguloJ4.text = "Angulo J4.Y: " + RotationJ4Y;
-        anguloJ5.text = "Angulo J5.Y: " + RotationJ5Z;
+        anguloJ1.text = "Angulo J1.Y: " + RotationJ1Y.ToString("F3");
+        anguloJ2.text = "Angulo J2.Z: " + RotationJ2Z.ToString("F3");
+        anguloJ3.text = "Angulo J3.Z: " + RotationJ3Z.ToString("F3");
+        anguloJ4.text = "Angulo J4.Y: " + RotationJ4Y.ToString("F3");
+        anguloJ5.text = "Angulo J5.Y: " + RotationJ5Z.ToString("F3");
 
         floatJ1.text = "J1 Repouso: " + yieldJ1.ToString("F2");
         floatJ2.text = "J2 Repouso: " + yieldJ2.ToString("F2");
