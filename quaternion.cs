@@ -239,12 +239,16 @@ public class quaternion : MonoBehaviour
         velocidadeJ4 = sliderVelocityJ4.value;
         velocidadeJ5 = sliderVelocityJ5.value;
 
+        //As seguintes funções foram chamadas aqui segundo por segundo pra elas sem manterem atualizadas, que nem um listener.
         //Atualizar os metodos que serão usados pelo SliderController.
         UpdateJ1();
         UpdateJ2();
         UpdateJ3();
         UpdateJ4();
         UpdateJ5();
+        //atualizar os metodos que serão usados na interface pelo botão pra deixar as juntas automaticas atraves de IEnumerator.
+        ativarJ1Min();
+        ativarJ1Max();
 
         /*/Pra receber automatação dos loops do arduino e exeutar os metodos na unity.
         if (mensagem.Contains("FORJ1MIN"))
