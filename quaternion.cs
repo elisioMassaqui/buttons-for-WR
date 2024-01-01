@@ -8,6 +8,8 @@ using Unity.VisualScripting;
 using UnityEngine.Windows;
 using Unity.VisualScripting.AssemblyQualifiedNameParser;
 using System;
+using UnityEditor.UI;
+using TMPro.EditorUtilities;
 
 public class quaternion : MonoBehaviour
 {
@@ -21,7 +23,7 @@ public class quaternion : MonoBehaviour
 
     [Header("Pra Usuário Definir A Porta Ou Tipo De Arduino.")]
     public string portaArduino;
-    public InputField inputArduinoPorta;
+    public TMP_InputField inputArduinoPorta;
     public TextMeshProUGUI statusPort;
 
      [Header("Angulos das Juntas Na UI")]
@@ -241,6 +243,9 @@ public class quaternion : MonoBehaviour
         updateJ1Max.isOn = false;
         updateJ2Min.isOn = !true;
         updateJ2Max.isOn = false;
+
+        // Inicialize o SerialPort com as configurações necessárias
+        serialPort = new SerialPort();
         // Configurar outras configurações do SerialPort, se necessário
         serialPort.BaudRate = 9600;
     }
@@ -253,7 +258,7 @@ public class quaternion : MonoBehaviour
         //Recebe o nome da porta da variavel que vai receber do Input.
             serialPort.PortName = portaArduino;
             serialPort.Open();
-            statusPort.text = "A sua porta: " + portaArduino + "Foi Aberta Com Sucesso!";
+            statusPort.text = "A sua porta: |" + portaArduino + "| Foi Aberta Com Sucesso!";
             StartCoroutine(entrarCena());
             
 
@@ -267,6 +272,8 @@ public class quaternion : MonoBehaviour
 
     }
 
+    public Scrollbar scrollbar;
+
     public void ClosePort()
     {
         // Fechar a porta se estiver aberta
@@ -278,13 +285,12 @@ public class quaternion : MonoBehaviour
     }
 
     IEnumerator entrarCena(){
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(8f);
         ConfigPort.SetActive(false);
     }
     // Update is called once per frame
     void Update()
     {
-
         //VALORES MAXIMOS MINIMOS DOS SLIDERS NA UI DE CADA JUNTA, ESSE VALOR É DO MOVIMENTO * VELCOCIDADE.
         sliderJ1.minValue = -1;
         sliderJ1.maxValue = 1;
