@@ -611,7 +611,7 @@ public class quaternion : MonoBehaviour
         {
 
         updateJ1Min.isOn = true;
-        updateJ2Max.isOn = false;
+        updateJ1Max.isOn = false;
         Debug.Log("J1-");
         yield return new WaitForSeconds(3f);
 
