@@ -47,8 +47,6 @@ public class quaternion : MonoBehaviour
     public Toggle updateJ5Min;
     public Toggle updateJ5Max;
 
-    public Toggle ativarToggles;
-
     [Header("Rastreio De Funções")]
     public GameObject Painel;
 
