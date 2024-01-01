@@ -732,6 +732,13 @@ public class quaternion : MonoBehaviour
     public void ativarJunta3(){
         StartCoroutine(terceiraJunta());
     }
+    public void ativarJunta4(){
+        StartCoroutine(quartaJunta());
+    }
+
+
+
+    //Essas são as nossas cortinas capazes de fazer jogos de luz e deixar algo com um ar automatico.
 
     IEnumerator primeiraJunta()
     {
@@ -773,5 +780,18 @@ public class quaternion : MonoBehaviour
         updateJ3Max.isOn = true;
         yield return new WaitForSeconds(yieldJ3);
      }  
+  }
+
+  IEnumerator quartaJunta(){
+    while (true)
+    {
+        updateJ4Min.isOn = true;
+        updateJ4Max.isOn = false;
+        yield return new WaitForSeconds(yieldJ4);
+
+        updateJ4Min.isOn = false;
+        updateJ4Max.isOn = true;
+        yield return new WaitForSeconds(yieldJ5);
+    }
   }
 }
