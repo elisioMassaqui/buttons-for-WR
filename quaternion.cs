@@ -378,11 +378,11 @@ public class quaternion : MonoBehaviour
         anguloJ4.text = "Angulo J4.Y: " + RotationJ4Y;
         anguloJ5.text = "Angulo J5.Y: " + RotationJ5Z;
 
-        floatJ1.text = "J1 Repouso: " + yieldJ1;
-        floatJ2.text = "J2 Repouso: " + yieldJ2;
-        floatJ3.text = "J3 Repouso: " + yieldJ3;
-        floatJ4.text = "J4 Repouso: " + yieldJ4;
-        floatJ5.text = "J5 Repouso: " + yieldJ5;
+        floatJ1.text = "J1 Repouso: " + yieldJ1.ToString("F2");
+        floatJ2.text = "J2 Repouso: " + yieldJ2.ToString("F2");
+        floatJ3.text = "J3 Repouso: " + yieldJ3.ToString("F2");
+        floatJ4.text = "J4 Repouso: " + yieldJ4.ToString("F2");
+        floatJ5.text = "J5 Repouso: " + yieldJ5.ToString("F3");
 
         if (serialPort.IsOpen)
         {
