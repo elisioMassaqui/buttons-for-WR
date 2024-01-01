@@ -49,22 +49,27 @@ public class quaternion : MonoBehaviour
     public Toggle updateJ5Min;
     public Toggle updateJ5Max;
 
-
+    [Header("Tempo Do Repouso Da Junta Na UI")]
     public TextMeshProUGUI floatJ1;
     public TextMeshProUGUI floatJ2;
     public TextMeshProUGUI floatJ3;
     public TextMeshProUGUI floatJ4;
     public TextMeshProUGUI floatJ5;
-    public float yieldJ1 = 3f;
+
+    [Header("Valor Tempo Do Repouso Da Junta Na UI")]
+    public float yieldJ1;
     public float yieldJ2;
     public float yieldJ3;
     public float yieldJ4;
     public float yieldJ5;
 
+    [Header("Slider Pra Controle Do Tempo De Repouso Da Junta")]
     public Slider sliderYieldJ1;
+    public Slider sliderYieldJ2;
+    public Slider sliderYieldJ3;
+    public Slider sliderYieldJ4;
+    public Slider sliderYieldJ5;
 
-    public float yieldMin = 0f;
-    public float yieldMax = 15f;
 
     [Header("Rastreio De Funções")]
     public GameObject Painel;
@@ -237,9 +242,10 @@ public class quaternion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        yieldJ1 = sliderYieldJ1.value;
+        
 
-        floatJ1.text = "J1 YIELD: " + yieldJ1;
+
+        
 
         //VALORES MAXIMOS MINIMOS DOS SLIDERS NA UI DE CADA JUNTA, ESSE VALOR É DO MOVIMENTO * VELCOCIDADE.
         sliderJ1.minValue = -1;
@@ -260,12 +266,27 @@ public class quaternion : MonoBehaviour
         sliderYieldJ1.minValue = 2f;
         sliderYieldJ1.maxValue = 15f;
 
+        sliderYieldJ2.minValue = 2f;
+        sliderYieldJ2.maxValue = 15f;
+
+        sliderYieldJ3.minValue = 2f;
+        sliderYieldJ3.maxValue = 15f;
+
+        sliderYieldJ5.minValue = 2f;
+        sliderYieldJ5.maxValue = 15f;
+
         //Sliders de velociadade na UI.
         velocidadeJ1 = sliderVelocityJ1.value;
         velocidadeJ2 = sliderVelocityJ2.value;
         velocidadeJ3 = sliderVelocityJ3.value;
         velocidadeJ4 = sliderVelocityJ4.value;
         velocidadeJ5 = sliderVelocityJ5.value;
+
+        yieldJ1 = sliderYieldJ1.value;
+        yieldJ2 = sliderYieldJ2.value;
+        yieldJ3 = sliderYieldJ3.value;
+        yieldJ4 = sliderYieldJ4.value;
+        yieldJ5 = sliderYieldJ5.value;
 
         //As seguintes funções foram chamadas aqui segundo por segundo pra elas sem manterem atualizadas, que nem um listener.
         //Atualizar os metodos que serão usados pelo SliderController.
@@ -309,6 +330,12 @@ public class quaternion : MonoBehaviour
         anguloJ3.text = "Angulo J3.Z: " + RotationJ3Z;
         anguloJ4.text = "Angulo J4.Y: " + RotationJ4Y;
         anguloJ5.text = "Angulo J5.Y: " + RotationJ5Z;
+
+        floatJ1.text = "J1 Repouso: " + yieldJ1;
+        floatJ2.text = "J2 Repouso: " + yieldJ2;
+        floatJ3.text = "J3 Repouso: " + yieldJ3;
+        floatJ4.text = "J4 Repouso: " + yieldJ4;
+        floatJ5.text = "J5 Repouso: " + yieldJ5;
 
 
         portaArduino = inputArduinoPorta.text;
