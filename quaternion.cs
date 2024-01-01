@@ -7,6 +7,7 @@ using System.IO.Ports;
 using Unity.VisualScripting;
 using UnityEngine.Windows;
 using Unity.VisualScripting.AssemblyQualifiedNameParser;
+using System;
 
 public class quaternion : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class quaternion : MonoBehaviour
     [Header("Pra Usuário Definir A Porta Ou Tipo De Arduino.")]
     public string portaArduino;
     public TextMeshProUGUI inputArduinoPorta;
+    public TextMeshProUGUI statusPort;
 
      [Header("Angulos das Juntas Na UI")]
     public TextMeshProUGUI anguloJ1;  //Mostrar, o angulo da junta a ser movida, em tempo real na tela.
@@ -233,19 +235,45 @@ public class quaternion : MonoBehaviour
     // Start is called before the first frame update.
     void Start()
     {
-        //Recebe o nome da porta da variavel que vai receber do Input.
-        serialPort.PortName = portaArduino;
-        serialPort.Open();
         updateJ1Min.isOn = !true;
         updateJ1Max.isOn = false;
         updateJ2Min.isOn = !true;
         updateJ2Max.isOn = false;
     }
+
+    public void OpenPorta(){
+         //A varaivel que vai dar a porta pra seriaPort está recebendo aqui o input do usuario.
+        portaArduino = inputArduinoPorta.text;
+
+        try
+        {
+        //Recebe o nome da porta da variavel que vai receber do Input.
+            serialPort.PortName = portaArduino;
+            serialPort.Open();
+            statusPort.text = "A sua porta: " + portaArduino + "Foi Aberta Com Sucesso!";
+
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("Erro ao abrir a porta: " + e.Message);
+            statusPort.text = "Falha Ao Abrir A Porta: " + statusPort;
+
+        }
+
+    }
+
+    public void ClosePort()
+    {
+        // Fechar a porta se estiver aberta
+        if (serialPort.IsOpen)
+        {
+            serialPort.Close();
+            statusPort.text = "Porta fechada!!!";
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        //A varaivel que vai dar a porta pra seriaPort está recebendo aqui o input do usuario.
-        portaArduino = inputArduinoPorta.text;
 
         //VALORES MAXIMOS MINIMOS DOS SLIDERS NA UI DE CADA JUNTA, ESSE VALOR É DO MOVIMENTO * VELCOCIDADE.
         sliderJ1.minValue = -1;
@@ -473,16 +501,17 @@ public class quaternion : MonoBehaviour
         }
 
         //Loops
-  
-       
-    }
-    
 
-        //Se sair do programa fecha a porta.
+  
+    //Se sair do programa fecha a porta.
       void OnApplicationQuit() 
     {
         serialPort.Close();
     }
+
+    }
+    
+
 
     //Atualização das nossas operaçoes pra rotacionar o objecto!
     //primeiro o valor do slider recebe o valor do slider do input no UI do usuario
