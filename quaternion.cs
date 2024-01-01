@@ -11,7 +11,7 @@ using Unity.VisualScripting.AssemblyQualifiedNameParser;
 public class quaternion : MonoBehaviour
 {
 
-    public SerialPort serialPort = new SerialPort ("COM19", 9600); 
+    public SerialPort serialPort = new SerialPort(); 
 
      [Header("Serial Unity-Arduino")]
      //...Carte de amor, que será recebido do arduino,, com certas informações, interprete cada informação do seu jeito e use ela como quiser.
