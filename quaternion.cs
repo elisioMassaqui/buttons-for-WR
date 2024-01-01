@@ -21,7 +21,7 @@ public class quaternion : MonoBehaviour
     public TextMeshProUGUI inputArduinoPorta;
 
      [Header("Angulos das Juntas Na UI")]
-    public TextMeshProUGUI anguloJ1;  //Mostrar o angulo da junta a ser movida, em tempo real na tela.
+    public TextMeshProUGUI anguloJ1;  //Mostrar, o angulo da junta a ser movida, em tempo real na tela.
     public TextMeshProUGUI anguloJ2;
     public TextMeshProUGUI anguloJ3;
     public TextMeshProUGUI anguloJ4;
