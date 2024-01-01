@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using TMPro;
 using System.IO.Ports;
 using Unity.VisualScripting;
+using UnityEngine.Windows;
+using Unity.VisualScripting.AssemblyQualifiedNameParser;
 
 public class quaternion : MonoBehaviour
 {
@@ -46,6 +48,12 @@ public class quaternion : MonoBehaviour
     public Toggle updateJ4Max;
     public Toggle updateJ5Min;
     public Toggle updateJ5Max;
+
+    public float yieldJ1;
+    public float yieldJ2;
+    public float yieldJ3;
+    public float yieldJ4;
+    public float yieldJ5;
 
     [Header("Rastreio De Funções")]
     public GameObject Painel;
@@ -255,6 +263,11 @@ public class quaternion : MonoBehaviour
         ativarJ1Max();
         ativarJ2Min();
         ativarJ2Max();
+        ativarJ3Min();
+        ativarJ3Max();
+
+
+        
 
         /*/Pra receber automatação dos loops do arduino e exeutar os metodos na unity.
         if (mensagem.Contains("FORJ1MIN"))
@@ -611,6 +624,18 @@ public class quaternion : MonoBehaviour
             UpdateJ2Max();
         }
     }
+    public void ativarJ3Min(){
+        if (updateJ3Min.isOn)
+        {
+            UpdateJ3Min();
+        }
+    }
+     public void ativarJ3Max(){
+        if (updateJ3Max.isOn)
+        {
+            UpdateJ3Max();
+        }
+    }
 
     public void ativarJunta1()
     {
@@ -620,6 +645,9 @@ public class quaternion : MonoBehaviour
     public void ativarJunta2(){
         StartCoroutine(segundaJunta());
     }
+    public void ativarJunta3(){
+        StartCoroutine(terceiraJunta());
+    }
 
     IEnumerator primeiraJunta()
     {
@@ -627,13 +655,11 @@ public class quaternion : MonoBehaviour
         {
         updateJ1Min.isOn = true;
         updateJ1Max.isOn = false;
-      
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(yieldJ1);
 
         updateJ1Min.isOn = false;
         updateJ1Max.isOn = true;
-       
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(yieldJ1);
         }
     }
 
@@ -653,6 +679,8 @@ public class quaternion : MonoBehaviour
     }
 
     IEnumerator terceiraJunta(){
+        while (true)
+        {
         updateJ3Min.isOn = true;
         updateJ3Max.isOn = false;
         yield return new WaitForSeconds(3f);
@@ -660,6 +688,6 @@ public class quaternion : MonoBehaviour
         updateJ3Min.isOn = false;
         updateJ3Max.isOn = true;
         yield return new WaitForSeconds(3f);
-    }
-
+     }  
+  }
 }
