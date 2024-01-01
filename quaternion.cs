@@ -201,10 +201,6 @@ public class quaternion : MonoBehaviour
         serialPort.Open();
     }
 
-       void vambazar(){
-         Debug.Log("YieldNot");
-       }
-
     // Update is called once per frame
     void Update()
     {
@@ -238,6 +234,9 @@ public class quaternion : MonoBehaviour
         UpdateJ3();
         UpdateJ4();
         UpdateJ5();
+
+        chamarJ1();
+        chamarJ2();
 
         /*/Pra receber automatação dos loops do arduino e exeutar os metodos na unity.
         if (mensagem.Contains("FORJ1MIN"))
@@ -361,7 +360,7 @@ public class quaternion : MonoBehaviour
                 }
                 else
                 {
-                    messageLove.text = "";
+                    messageLove.text = "Arduino´s Love Card";
                 }
   
 
@@ -417,7 +416,7 @@ public class quaternion : MonoBehaviour
     //terceiro difinimos limites fazendo o valor da rotação com limite direito e limite esquerdo, pra o valor da rotação permanecer dentre os limites.
     //quarto é aqui onde aplicamos a operação Quaternion.Euler com as rotações do objecto cuja unica rotação que está sofrer alteração é do eixo Rotation(nome da junta e eixo nesse caso J1Y) atribuindo na rotação local do nosso objecto.
 
-    public void UpdateJ1()
+     public void UpdateJ1()
     {
         valorDoSliderJ1 = sliderJ1.value;
         RotationJ1Y += valorDoSliderJ1 * velocidadeJ1 * Time.deltaTime;
@@ -433,7 +432,7 @@ public class quaternion : MonoBehaviour
         J2.localRotation = Quaternion.Euler(RotationJ2X, RotationJ2Y, RotationJ2Z);
     }
 
-          public void UpdateJ3()
+        public void UpdateJ3()
     {
         valorDoSliderJ3 = sliderJ3.value;
         RotationJ3Z += valorDoSliderJ3 * velocidadeJ3 * Time.deltaTime;
@@ -566,6 +565,42 @@ public class quaternion : MonoBehaviour
         RotationJ5Z += valorButtonJ5Max * velocidadeJ5 * Time.deltaTime;
         RotationJ5Z = Mathf.Clamp(RotationJ5Z, J5Min, J5Max);
         J5.localRotation = Quaternion.Euler(RotationJ5X, RotationJ5Y, RotationJ5Z);
+    }
+
+    public void chamarJ1(){
+        if (toggleJ1.isOn)
+        {
+            UpdateJ1Min();
+        }
+    }
+
+        public void chamarJ2(){
+        if (toggleJ2.isOn)
+        {
+            UpdateJ1Max();
+        }
+    }
+
+    public void ativarJuntas()
+    {
+        StartCoroutine(primeiraJunta()); 
+    }
+
+    IEnumerator primeiraJunta()
+    {
+        while (true)
+        {
+
+        toggleJ1.isOn = true;
+        toggleJ2.isOn = false;
+        Debug.Log("J1-");
+        yield return new WaitForSeconds(3f);
+
+        toggleJ1.isOn = false;
+        toggleJ2.isOn = true;
+        Debug.Log("J1+");
+        yield return new WaitForSeconds(3f);
+        }
     }
 
 }

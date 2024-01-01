@@ -10,7 +10,12 @@ public class ToggleMessageSwitch : MonoBehaviour
 
     private void Start()
     {
-        // Inicia o processo de exibição de mensagens
+       
+    }
+
+    // Método público para iniciar a rotina a partir do Inspector..
+    public void IniciarRotinaMensagens()
+    {
         StartCoroutine(AlternarMensagens());
     }
 
