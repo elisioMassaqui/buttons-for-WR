@@ -830,12 +830,15 @@ public class quaternion : MonoBehaviour
   }
 
   IEnumerator quintaJunta(){
+    while (true)
+    {
     updateJ5Min.isOn = true;
     updateJ5Max.isOn = false;
     yield return new WaitForSeconds(yieldJ5);
 
     updateJ5Min.isOn = false;
     updateJ5Max.isOn = true;
-    yield return new WaitForSeconds(yieldJ5);
+    yield return new WaitForSeconds(yieldJ5);   
+    }
   }
 }
