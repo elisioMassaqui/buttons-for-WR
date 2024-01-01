@@ -249,6 +249,8 @@ public class quaternion : MonoBehaviour
         //atualizar os metodos que serão usados na interface pelo botão pra deixar as juntas automaticas atraves de IEnumerator.
         ativarJ1Min();
         ativarJ1Max();
+        ativarJ2Min();
+        ativarJ2Max();
 
         /*/Pra receber automatação dos loops do arduino e exeutar os metodos na unity.
         if (mensagem.Contains("FORJ1MIN"))
@@ -594,22 +596,31 @@ public class quaternion : MonoBehaviour
     }
     
     public void ativarJ2Min(){
-
+        if(updateJ1Min.isOn){
+            UpdateJ2Min();
+        }
     }
+
     public void ativarJ2Max(){
-
+        if (updateJ2Max.isOn)
+        {
+            UpdateJ2Max();
+        }
     }
 
-    public void ativarJuntas()
+    public void ativarJunta1()
     {
         StartCoroutine(primeiraJunta()); 
+    }
+
+    public void ativarJunta2(){
+        StartCoroutine(segundJunta());
     }
 
     IEnumerator primeiraJunta()
     {
         while (true)
         {
-
         updateJ1Min.isOn = true;
         updateJ1Max.isOn = false;
         Debug.Log("J1-");
@@ -619,6 +630,19 @@ public class quaternion : MonoBehaviour
         updateJ1Max.isOn = true;
         Debug.Log("J1+");
         yield return new WaitForSeconds(3f);
+        }
+    }
+
+    IEnumerator segundJunta(){
+        while (true)
+        {
+            updateJ2Min.isOn = true;
+            updateJ2Max.isOn = false;
+            yield return new WaitForSeconds(3f);
+
+            updateJ2Min.isOn = false;
+            updateJ2Max.isOn = true;
+            yield return new WaitForSeconds(3f);
         }
     }
 
