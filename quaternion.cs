@@ -596,7 +596,7 @@ public class quaternion : MonoBehaviour
     }
     
     public void ativarJ2Min(){
-        if(updateJ1Min.isOn){
+        if(updateJ2Min.isOn){
             UpdateJ2Min();
         }
     }
@@ -614,7 +614,7 @@ public class quaternion : MonoBehaviour
     }
 
     public void ativarJunta2(){
-        StartCoroutine(segundJunta());
+        StartCoroutine(segundaJunta());
     }
 
     IEnumerator primeiraJunta()
@@ -623,25 +623,27 @@ public class quaternion : MonoBehaviour
         {
         updateJ1Min.isOn = true;
         updateJ1Max.isOn = false;
-        Debug.Log("J1-");
+      
         yield return new WaitForSeconds(3f);
 
         updateJ1Min.isOn = false;
         updateJ1Max.isOn = true;
-        Debug.Log("J1+");
+       
         yield return new WaitForSeconds(3f);
         }
     }
 
-    IEnumerator segundJunta(){
+    IEnumerator segundaJunta(){
         while (true)
         {
             updateJ2Min.isOn = true;
             updateJ2Max.isOn = false;
+            Debug.Log("J2-");
             yield return new WaitForSeconds(3f);
 
             updateJ2Min.isOn = false;
             updateJ2Max.isOn = true;
+            Debug.Log("J2+");
             yield return new WaitForSeconds(3f);
         }
     }
