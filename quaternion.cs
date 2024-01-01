@@ -712,12 +712,12 @@ public class quaternion : MonoBehaviour
             updateJ2Min.isOn = true;
             updateJ2Max.isOn = false;
             Debug.Log("J2-");
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(yieldJ2);
 
             updateJ2Min.isOn = false;
             updateJ2Max.isOn = true;
             Debug.Log("J2+");
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(yieldJ2);
         }
     }
 
@@ -726,11 +726,11 @@ public class quaternion : MonoBehaviour
         {
         updateJ3Min.isOn = true;
         updateJ3Max.isOn = false;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(yieldJ3);
 
         updateJ3Min.isOn = false;
         updateJ3Max.isOn = true;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(yieldJ3);
      }  
   }
 }
