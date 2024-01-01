@@ -36,12 +36,6 @@ public class quaternion : MonoBehaviour
     public Toggle toggleJ5;
 
     [Header("Modo Automático")]
-    public Toggle ativarJ1;
-    public Toggle ativarJ2;
-    public Toggle ativarJ3;
-    public Toggle ativarJ4;
-    public Toggle ativarJ5;
-
     public Toggle updateJ1Min;
     public Toggle updateJ1Max;
     public Toggle updateJ2Min;
@@ -614,13 +608,13 @@ public class quaternion : MonoBehaviour
         while (true)
         {
 
-        ativarJ1.isOn = true;
-        ativarJ1.isOn= false;
+        updateJ1Min.isOn = true;
+        updateJ2Max.isOn = false;
         Debug.Log("J1-");
         yield return new WaitForSeconds(3f);
 
-        ativarJ1.isOn = false;
-        ativarJ1.isOn = true;
+        updateJ1Min.isOn = false;
+        updateJ1Max.isOn = true;
         Debug.Log("J1+");
         yield return new WaitForSeconds(3f);
         }
