@@ -55,14 +55,16 @@ public class quaternion : MonoBehaviour
     public TextMeshProUGUI floatJ3;
     public TextMeshProUGUI floatJ4;
     public TextMeshProUGUI floatJ5;
-    public float yieldJ1;
+    public float yieldJ1 = 3f;
     public float yieldJ2;
     public float yieldJ3;
     public float yieldJ4;
     public float yieldJ5;
 
-    public float yieldMin;
-    public float yieldMax;
+    public Slider sliderYieldJ1;
+
+    public float yieldMin = 0f;
+    public float yieldMax = 15f;
 
     [Header("Rastreio De Funções")]
     public GameObject Painel;
@@ -232,15 +234,12 @@ public class quaternion : MonoBehaviour
         updateJ2Min.isOn = !true;
         updateJ2Max.isOn = false;
     }
-
-    public void maisYieldJ1(){
-        yieldJ1 = Mathf.Clamp(yieldJ1, yieldMin, yieldMax);
-        yieldJ1++;
-    }
-
     // Update is called once per frame
     void Update()
     {
+        yieldJ1 = sliderYieldJ1.value;
+
+        floatJ1.text = "J1 YIELD: " + yieldJ1;
 
         //VALORES MAXIMOS MINIMOS DOS SLIDERS NA UI DE CADA JUNTA, ESSE VALOR É DO MOVIMENTO * VELCOCIDADE.
         sliderJ1.minValue = -1;
@@ -257,6 +256,9 @@ public class quaternion : MonoBehaviour
 
         sliderJ5.minValue = -1;
         sliderJ5.maxValue = 1;
+
+        sliderYieldJ1.minValue = 2f;
+        sliderYieldJ1.maxValue = 15f;
 
         //Sliders de velociadade na UI.
         velocidadeJ1 = sliderVelocityJ1.value;
