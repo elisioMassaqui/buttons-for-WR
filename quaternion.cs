@@ -41,6 +41,18 @@ public class quaternion : MonoBehaviour
     public Toggle ativarJ3;
     public Toggle ativarJ4;
     public Toggle ativarJ5;
+
+    public Toggle updateJ1Min;
+    public Toggle updateJ1Max;
+    public Toggle updateJ2Min;
+    public Toggle updateJ2Max;
+    public Toggle updateJ3Min;
+    public Toggle updateJ3Max;
+    public Toggle updateJ4Min;
+    public Toggle updateJ4Max;
+    public Toggle updateJ5Min;
+    public Toggle updateJ5Max;
+
     public Toggle ativarToggles;
 
     [Header("Rastreio De Funções")]
@@ -241,7 +253,7 @@ public class quaternion : MonoBehaviour
         UpdateJ3();
         UpdateJ4();
         UpdateJ5();
-        
+
         /*/Pra receber automatação dos loops do arduino e exeutar os metodos na unity.
         if (mensagem.Contains("FORJ1MIN"))
         {
@@ -572,14 +584,14 @@ public class quaternion : MonoBehaviour
     }
 
     public void ativarJ1Min(){
-        if (toggleJ1.isOn)
+        if (updateJ1Min.isOn)
         {
             UpdateJ1Min();
         }
     }
 
     public void ativarJ1Max(){
-        if (toggleJ2.isOn)
+        if (updateJ1Max.isOn)
         {
             UpdateJ1Max();
         }
@@ -602,13 +614,13 @@ public class quaternion : MonoBehaviour
         while (true)
         {
 
-        toggleJ1.isOn = true;
-        toggleJ2.isOn = false;
+        ativarJ1.isOn = true;
+        ativarJ1.isOn= false;
         Debug.Log("J1-");
         yield return new WaitForSeconds(3f);
 
-        toggleJ1.isOn = false;
-        toggleJ2.isOn = true;
+        ativarJ1.isOn = false;
+        ativarJ1.isOn = true;
         Debug.Log("J1+");
         yield return new WaitForSeconds(3f);
         }
