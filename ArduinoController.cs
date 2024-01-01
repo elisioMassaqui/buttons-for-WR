@@ -14,7 +14,7 @@ public class ArduinoController : MonoBehaviour
         serialPort = new SerialPort();
 
         // Configurar outras configurações do SerialPort, se necessário
-        // serialPort.BaudRate = 9600;
+         serialPort.BaudRate = 9600;
     }
 
     void Update()
