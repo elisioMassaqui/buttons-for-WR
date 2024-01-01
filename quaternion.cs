@@ -49,6 +49,12 @@ public class quaternion : MonoBehaviour
     public Toggle updateJ5Min;
     public Toggle updateJ5Max;
 
+
+    public TextMeshProUGUI floatJ1;
+    public TextMeshProUGUI floatJ2;
+    public TextMeshProUGUI floatJ3;
+    public TextMeshProUGUI floatJ4;
+    public TextMeshProUGUI floatJ5;
     public float yieldJ1;
     public float yieldJ2;
     public float yieldJ3;
