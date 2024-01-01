@@ -12,7 +12,7 @@ using System;
 public class quaternion : MonoBehaviour
 {
 
-    public SerialPort serialPort = new SerialPort(); 
+    public SerialPort serialPort; 
 
      [Header("Serial Unity-Arduino")]
      //...Carte de amor, que será recebido do arduino,, com certas informações, interprete cada informação do seu jeito e use ela como quiser.
@@ -75,6 +75,8 @@ public class quaternion : MonoBehaviour
 
     [Header("Rastreio De Funções")]
     public GameObject Painel;
+
+    public GameObject ConfigPort;
 
      [Header("=============Vida das Juntas=============")]
      #region ConfiguracoesJ1
@@ -239,6 +241,12 @@ public class quaternion : MonoBehaviour
         updateJ1Max.isOn = false;
         updateJ2Min.isOn = !true;
         updateJ2Max.isOn = false;
+
+        // Inicialize o SerialPort com as configurações necessárias
+        serialPort = new SerialPort();
+
+        // Configurar outras configurações do SerialPort, se necessário
+        serialPort.BaudRate = 9600;
     }
 
     public void OpenPorta(){
@@ -251,12 +259,14 @@ public class quaternion : MonoBehaviour
             serialPort.PortName = portaArduino;
             serialPort.Open();
             statusPort.text = "A sua porta: " + portaArduino + "Foi Aberta Com Sucesso!";
+            StartCoroutine(entrarCena());
+            
 
         }
         catch (System.Exception e)
         {
             Debug.LogError("Erro ao abrir a porta: " + e.Message);
-            statusPort.text = "Falha Ao Abrir A Porta: " + statusPort;
+            statusPort.text = "Falha Ao Abrir A Porta: " + portaArduino;
 
         }
 
@@ -271,9 +281,16 @@ public class quaternion : MonoBehaviour
             statusPort.text = "Porta fechada!!!";
         }
     }
+
+    IEnumerator entrarCena(){
+        yield return new WaitForSeconds(5f);
+        ConfigPort.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {
+
+        OpenPorta();
 
         //VALORES MAXIMOS MINIMOS DOS SLIDERS NA UI DE CADA JUNTA, ESSE VALOR É DO MOVIMENTO * VELCOCIDADE.
         sliderJ1.minValue = -1;
