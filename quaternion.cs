@@ -233,6 +233,8 @@ public class quaternion : MonoBehaviour
     // Start is called before the first frame update.
     void Start()
     {
+        //Recebe o nome da porta da variavel que vai receber do Input.
+        serialPort.PortName = portaArduino;
         serialPort.Open();
         updateJ1Min.isOn = !true;
         updateJ1Max.isOn = false;
@@ -242,10 +244,8 @@ public class quaternion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
-
-        
+        //A varaivel que vai dar a porta pra seriaPort está recebendo aqui o input do usuario.
+        portaArduino = inputArduinoPorta.text;
 
         //VALORES MAXIMOS MINIMOS DOS SLIDERS NA UI DE CADA JUNTA, ESSE VALOR É DO MOVIMENTO * VELCOCIDADE.
         sliderJ1.minValue = -1;
