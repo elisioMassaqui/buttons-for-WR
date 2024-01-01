@@ -28,15 +28,22 @@ public class quaternion : MonoBehaviour
     public TextMeshProUGUI anguloJ5;
 
     //O toggle é o componente da UI que funciona como bool.
-     [Header("Ativar e Desativar Botões Da Protoboard")]
+    [Header("Ativar e Desativar Botões Da Protoboard")]
     public Toggle toggleJ1;
     public Toggle toggleJ2;
     public Toggle toggleJ3;
     public Toggle toggleJ4;
     public Toggle toggleJ5;
-    public Toggle iniciarToggle;
-    public float bazar = 5f;
 
+    [Header("Modo Automático")]
+    public Toggle ativarJ1;
+    public Toggle ativarJ2;
+    public Toggle ativarJ3;
+    public Toggle ativarJ4;
+    public Toggle ativarJ5;
+    public Toggle ativarToggles;
+
+    [Header("Rastreio De Funções")]
     public GameObject Painel;
 
      [Header("=============Vida das Juntas=============")]
@@ -234,10 +241,7 @@ public class quaternion : MonoBehaviour
         UpdateJ3();
         UpdateJ4();
         UpdateJ5();
-
-        chamarJ1();
-        chamarJ2();
-
+        
         /*/Pra receber automatação dos loops do arduino e exeutar os metodos na unity.
         if (mensagem.Contains("FORJ1MIN"))
         {
@@ -567,18 +571,25 @@ public class quaternion : MonoBehaviour
         J5.localRotation = Quaternion.Euler(RotationJ5X, RotationJ5Y, RotationJ5Z);
     }
 
-    public void chamarJ1(){
+    public void ativarJ1Min(){
         if (toggleJ1.isOn)
         {
             UpdateJ1Min();
         }
     }
 
-        public void chamarJ2(){
+    public void ativarJ1Max(){
         if (toggleJ2.isOn)
         {
             UpdateJ1Max();
         }
+    }
+    
+    public void ativarJ2Min(){
+
+    }
+    public void ativarJ2Max(){
+
     }
 
     public void ativarJuntas()
