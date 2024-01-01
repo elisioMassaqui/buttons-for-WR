@@ -382,7 +382,7 @@ public class quaternion : MonoBehaviour
         floatJ2.text = "J2 Repouso: " + yieldJ2.ToString("F2");
         floatJ3.text = "J3 Repouso: " + yieldJ3.ToString("F2");
         floatJ4.text = "J4 Repouso: " + yieldJ4.ToString("F2");
-        floatJ5.text = "J5 Repouso: " + yieldJ5.ToString("F3");
+        floatJ5.text = "J5 Repouso: " + yieldJ5.ToString("F2");
 
         if (serialPort.IsOpen)
         {
