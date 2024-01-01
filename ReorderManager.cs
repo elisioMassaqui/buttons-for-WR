@@ -38,6 +38,6 @@ public class ReorderManager : MonoBehaviour
         Debug.Log("Nova Ordem: " + string.Join(", ", novaOrdem));
 
          // Atualiza o Text com a nova ordem
-        textoOrdem.text = "Nova Ordem: " + string.Join(", ", novaOrdem);tex
+        textoOrdem.text = "Nova Ordem: " + string.Join(", ", novaOrdem);
     }
 }
