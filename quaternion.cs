@@ -241,10 +241,6 @@ public class quaternion : MonoBehaviour
         updateJ1Max.isOn = false;
         updateJ2Min.isOn = !true;
         updateJ2Max.isOn = false;
-
-        // Inicialize o SerialPort com as configurações necessárias
-        serialPort = new SerialPort();
-
         // Configurar outras configurações do SerialPort, se necessário
         serialPort.BaudRate = 9600;
     }
@@ -252,7 +248,6 @@ public class quaternion : MonoBehaviour
     public void OpenPorta(){
          //A varaivel que vai dar a porta pra seriaPort está recebendo aqui o input do usuario.
         portaArduino = inputArduinoPorta.text;
-
         try
         {
         //Recebe o nome da porta da variavel que vai receber do Input.
@@ -289,8 +284,6 @@ public class quaternion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        OpenPorta();
 
         //VALORES MAXIMOS MINIMOS DOS SLIDERS NA UI DE CADA JUNTA, ESSE VALOR É DO MOVIMENTO * VELCOCIDADE.
         sliderJ1.minValue = -1;
@@ -381,9 +374,6 @@ public class quaternion : MonoBehaviour
         floatJ3.text = "J3 Repouso: " + yieldJ3;
         floatJ4.text = "J4 Repouso: " + yieldJ4;
         floatJ5.text = "J5 Repouso: " + yieldJ5;
-
-
-        portaArduino = inputArduinoPorta.text;
 
         if (serialPort.IsOpen)
         {
