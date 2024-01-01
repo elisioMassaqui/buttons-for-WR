@@ -347,6 +347,8 @@ public class quaternion : MonoBehaviour
         ativarJ3Max();
         ativarJ4Min();
         ativarJ4Max();
+        ativarJ5Min();
+        ativarJ5Max();
 
 
         
@@ -736,6 +738,17 @@ public class quaternion : MonoBehaviour
             UpdateJ4Max();
         }
     }
+    public void ativarJ5Min(){
+        if(updateJ5Min.isOn){
+            UpdateJ5Min();
+        }
+    }
+    public void ativarJ5Max(){
+        if (updateJ5Max.isOn)
+        {
+            UpdateJ5Max();
+        }
+    }
 
      //Aqui estão aqueles que serão usados pelo evento de clique nos botões lá no insepector já que as cortinas não são os tipos de meotodos pra serem cahamados do Inspector.
 
@@ -752,6 +765,9 @@ public class quaternion : MonoBehaviour
     }
     public void ativarJunta4(){
         StartCoroutine(quartaJunta());
+    }
+    public void ativarJunta5(){
+        StartCoroutine(quintaJunta());
     }
 
 
