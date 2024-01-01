@@ -345,6 +345,8 @@ public class quaternion : MonoBehaviour
         ativarJ2Max();
         ativarJ3Min();
         ativarJ3Max();
+        ativarJ4Min();
+        ativarJ4Max();
 
 
         
@@ -591,7 +593,7 @@ public class quaternion : MonoBehaviour
         valorDoSliderJ5 = 0f;
     }
 
-    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes!
+    //Botoes, um para valor minimo e outro pra maximo, diferentes direcçoes,podem ser chamados onde voce quiser, estão dispostas pra te servir!
 
         //Botões J1
        public void UpdateJ1Min()
@@ -682,6 +684,9 @@ public class quaternion : MonoBehaviour
         J5.localRotation = Quaternion.Euler(RotationJ5X, RotationJ5Y, RotationJ5Z);
     }
 
+
+
+     //Essas são as foqueiras que escutam por trás das cortinas e avisam pra outras tias se mexerem kkk
     public void ativarJ1Min(){
         if (updateJ1Min.isOn)
         {
@@ -720,6 +725,19 @@ public class quaternion : MonoBehaviour
             UpdateJ3Max();
         }
     }
+    public void ativarJ4Min(){
+        if(updateJ4Min.isOn){
+            UpdateJ4Min();
+        }
+    }
+    public void ativarJ4Max(){
+        if (updateJ4Max.isOn)
+        {
+            UpdateJ4Max();
+        }
+    }
+
+     //Aqui estão aqueles que serão usados pelo evento de clique nos botões lá no insepector já que as cortinas não são os tipos de meotodos pra serem cahamados do Inspector.
 
     public void ativarJunta1()
     {
@@ -793,5 +811,15 @@ public class quaternion : MonoBehaviour
         updateJ4Max.isOn = true;
         yield return new WaitForSeconds(yieldJ5);
     }
+  }
+
+  IEnumerator quintaJunta(){
+    updateJ5Min.isOn = true;
+    updateJ5Max.isOn = false;
+    yield return new WaitForSeconds(yieldJ5);
+
+    updateJ5Min.isOn = false;
+    updateJ5Max.isOn = true;
+    yield return new WaitForSeconds(yieldJ5);
   }
 }
