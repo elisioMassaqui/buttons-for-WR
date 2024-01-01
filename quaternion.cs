@@ -25,6 +25,7 @@ public class quaternion : MonoBehaviour
     public string portaArduino;
     public TMP_InputField inputArduinoPorta;
     public TextMeshProUGUI statusPort;
+    public GameObject ConfigPort;
 
      [Header("Angulos das Juntas Na UI")]
     public TextMeshProUGUI anguloJ1;  //Mostrar, o angulo da junta a ser movida, em tempo real na tela.
@@ -77,8 +78,6 @@ public class quaternion : MonoBehaviour
 
     [Header("Rastreio De Funções")]
     public GameObject Painel;
-
-    public GameObject ConfigPort;
 
      [Header("=============Vida das Juntas=============")]
      #region ConfiguracoesJ1
