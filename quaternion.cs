@@ -210,6 +210,10 @@ public class quaternion : MonoBehaviour
     void Start()
     {
         serialPort.Open();
+        updateJ1Min.isOn = !true;
+        updateJ1Max.isOn = false;
+        updateJ2Min.isOn = !true;
+        updateJ2Max.isOn = false;
     }
 
     // Update is called once per frame
@@ -646,6 +650,16 @@ public class quaternion : MonoBehaviour
             Debug.Log("J2+");
             yield return new WaitForSeconds(3f);
         }
+    }
+
+    IEnumerator terceiraJunta(){
+        updateJ3Min.isOn = true;
+        updateJ3Max.isOn = false;
+        yield return new WaitForSeconds(3f);
+
+        updateJ3Min.isOn = false;
+        updateJ3Max.isOn = true;
+        yield return new WaitForSeconds(3f);
     }
 
 }
