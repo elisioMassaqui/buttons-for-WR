@@ -61,6 +61,9 @@ public class quaternion : MonoBehaviour
     public float yieldJ4;
     public float yieldJ5;
 
+    public float yieldMin;
+    public float yieldMax;
+
     [Header("Rastreio De Funções")]
     public GameObject Painel;
 
@@ -228,6 +231,11 @@ public class quaternion : MonoBehaviour
         updateJ1Max.isOn = false;
         updateJ2Min.isOn = !true;
         updateJ2Max.isOn = false;
+    }
+
+    public void maisYieldJ1(){
+        yieldJ1 = Mathf.Clamp(yieldJ1, yieldMin, yieldMax);
+        yieldJ1++;
     }
 
     // Update is called once per frame
