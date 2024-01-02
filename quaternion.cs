@@ -28,7 +28,7 @@ public class quaternion : MonoBehaviour
     public TextMeshProUGUI anguloJ4;
     public TextMeshProUGUI anguloJ5;
 
-    //O toggle é o componente da UI que funciona como bool.
+    //O toggle é o componente da UI que funciona como bool..
     [Header("Ativar e Desativar Botões Da Protoboard")]
     public Toggle toggleJ1;
     public Toggle toggleJ2;
