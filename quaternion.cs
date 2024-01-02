@@ -10,7 +10,7 @@ public class quaternion : MonoBehaviour
 
     public SerialPort serialPort; 
 
-     [Header("Serial Unity-Arduino")]
+    [Header("Serial Unity-Arduino")]
      //...Carte de amor, que será recebido do arduino,, com certas informações, interprete cada informação do seu jeito e use ela como quiser.
     public string mensagem;
     public TextMeshProUGUI messageLove;  //Botão a ser pressionado
@@ -21,7 +21,7 @@ public class quaternion : MonoBehaviour
     public TextMeshProUGUI statusPort;
     public GameObject ConfigPort;
 
-     [Header("Angulos das Juntas Na UI")]
+    [Header("Angulos das Juntas Na UI")]
     public TextMeshProUGUI anguloJ1;  //Mostrar, o angulo da junta a ser movida, em tempo real na tela.
     public TextMeshProUGUI anguloJ2;
     public TextMeshProUGUI anguloJ3;
@@ -73,7 +73,7 @@ public class quaternion : MonoBehaviour
     [Header("Rastreio De Funções")]
     public GameObject Painel;
 
-     [Header("=============Vida das Juntas=============")]
+    [Header("=============Vida das Juntas=============")]
      #region ConfiguracoesJ1
 
      [Header("Vida J1")]
@@ -107,7 +107,7 @@ public class quaternion : MonoBehaviour
 
          #region ConfiguracoesJ2
 
-     [Header("Vida J2")]
+    [Header("Vida J2")]
      //Vida J2 e sua velocidade.
     public Transform J2; // Transformação do Nosso objecto!
     public Slider sliderVelocityJ2;
@@ -139,7 +139,7 @@ public class quaternion : MonoBehaviour
     
          #region ConfiguracoesJ3
 
-     [Header("Vida J3")]
+    [Header("Vida J3")]
      //Vida J3 e sua velocidade.
     public Transform J3; // Transformação do Nosso objecto!
     public Slider sliderVelocityJ3;
@@ -170,7 +170,7 @@ public class quaternion : MonoBehaviour
 
           #region ConfiguracoesJ4
 
-     [Header("Vida J4")]
+    [Header("Vida J4")]
      //Vida J4 e sua velocidade.
     public Transform J4; // Transformação do Nosso objecto!
     public Slider sliderVelocityJ4;
@@ -201,7 +201,7 @@ public class quaternion : MonoBehaviour
 
           #region ConfiguracoesJ5
 
-     [Header("Vida J5")]
+    [Header("Vida J5")]
      //Vida J5 e sua velocidade.
     public Transform J5; // Transformação do Nosso objecto!
     public Slider sliderVelocityJ5;
