@@ -284,6 +284,22 @@ public class quaternion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (serialPort.IsOpen)
+        {
+            if(Input.GetKeyDown(KeyCode.Space)){
+            try
+            {
+                serialPort.Write("A");
+                Debug.Log("A fOR aRDUINO");
+            }
+            catch (System.Exception)
+            {
+                
+                throw;
+            }
+        }
+        }
+       
         //VALORES MAXIMOS MINIMOS DOS SLIDERS NA UI DE CADA JUNTA, ESSE VALOR É DO MOVIMENTO * VELCOCIDADE.
         sliderJ1.minValue = -1;
         sliderJ1.maxValue = 1;
@@ -472,7 +488,7 @@ public class quaternion : MonoBehaviour
                 }
                 else
                 {
-                    messageLove.text = "Arduino´s Love Card";
+                    messageLove.text = "Arduino Love Card";
                 }
   
 
@@ -480,7 +496,6 @@ public class quaternion : MonoBehaviour
             
                 catch (System.Exception)
             {
-                
                 throw;
             }
         }
@@ -489,7 +504,7 @@ public class quaternion : MonoBehaviour
          if(serialPort.IsOpen && RotationJ1Y < 0){
             try
             {
-                serialPort.Write("A");
+                serialPort.Write("C");
             }
             catch (System.Exception)
             {
