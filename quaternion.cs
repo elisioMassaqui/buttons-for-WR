@@ -232,10 +232,22 @@ public class quaternion : MonoBehaviour
     // Start is called before the first frame update.
     void Start()
     {
+        //É melhor começar inicializar como falso ou null ou não usaveis pra não ter conflitos de controles e não dar problema parecido com Gimpal Lock e fazer o coitado tremer kkk.
         updateJ1Min.isOn = !true;
         updateJ1Max.isOn = false;
+
         updateJ2Min.isOn = !true;
         updateJ2Max.isOn = false;
+
+        updateJ3Min.isOn = !true;
+        updateJ3Max.isOn = false;
+
+        updateJ4Min.isOn = !true;
+        updateJ4Max.isOn = false;
+
+        updateJ5Min.isOn = !true;
+        updateJ5Max.isOn = false;
+
 
         // Inicialize o SerialPort com as configurações necessárias
         serialPort = new SerialPort();
