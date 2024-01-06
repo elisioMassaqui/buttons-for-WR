@@ -73,6 +73,8 @@ public class quaternion : MonoBehaviour
     [Header("Rastreio De Funções")]
     public GameObject Painel;
 
+    public Scrollbar scrollbar;
+
     [Header("=============Vida das Juntas=============")]
      #region ConfiguracoesJ1
 
@@ -229,6 +231,8 @@ public class quaternion : MonoBehaviour
     public float J5Max; // Valor Máximo da rotaçãoZ!
     
     #endregion
+
+
     // Start is called before the first frame update.
     void Start()
     {
@@ -277,7 +281,6 @@ public class quaternion : MonoBehaviour
 
     }
 
-    public Scrollbar scrollbar;
 
     public void ClosePort()
     {
@@ -293,6 +296,8 @@ public class quaternion : MonoBehaviour
         yield return new WaitForSeconds(8f);
         ConfigPort.SetActive(false);
     }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -310,7 +315,7 @@ public class quaternion : MonoBehaviour
                 throw;
             }
         }
-        }
+    }
        
         //VALORES MAXIMOS MINIMOS DOS SLIDERS NA UI DE CADA JUNTA, ESSE VALOR É DO MOVIMENTO * VELCOCIDADE.
         sliderJ1.minValue = -1;
